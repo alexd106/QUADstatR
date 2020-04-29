@@ -23,15 +23,6 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162377463-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-162377463-1');
-</script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -389,40 +380,6 @@ $(document).ready(function () {
     Lectures
   </a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-book"></span>
-     
-    R book
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="https://alexd106.github.io/Rbook">
-        <span class="fa fa-firefox"></span>
-         
-        Web book
-      </a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="https://github.com/alexd106/Rbook/raw/master/docs/Rbook.pdf">
-        <span class="fa fa-file-pdf"></span>
-         
-        PDF book
-      </a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="R_manual_2020.pdf">
-        <span class="fa fa-book"></span>
-         
-        Old manual
-      </a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="exercises.html">
     <span class="fa fa-book"></span>
@@ -660,8 +617,8 @@ $(document).ready(function () {
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># results in a dataframe filled with NAs.</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2">whale.new &lt;-<span class="st"> </span>whale[whale<span class="op">$</span>depth <span class="op">&gt;</span><span class="st"> </span><span class="dv">1500</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>number.whales <span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(whale<span class="op">$</span>number.whales), ]</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co"># the variable number.whales contains 1 NA value. By default the mean function will return an NA.  use the na.rm argument</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co"># to ignore NAs</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co"># the variable number.whales contains 1 NA value. By default the mean function will return an NA.  use the na.rm argument to ignore</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co"># NAs</span></a>
 <a class="sourceLine" id="cb7-6" data-line-number="6">whale.new &lt;-<span class="st"> </span>whale[whale<span class="op">$</span>depth <span class="op">&gt;</span><span class="st"> </span><span class="dv">1500</span> <span class="op">&amp;</span><span class="st"> </span>whale<span class="op">$</span>number.whales <span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(whale<span class="op">$</span>number.whales, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), ]</a></code></pre></div></li>
 </ol>
 <p> </p>
