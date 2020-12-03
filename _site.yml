@@ -1,6 +1,6 @@
 # See http://rmarkdown.rstudio.com/rmarkdown_websites.html
 
-name: "QUADstat An introduction to R"
+name: "QUADstatR An introduction to R"
 output_dir: "."
 navbar:
   title: "QUADstat"
