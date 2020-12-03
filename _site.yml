@@ -3,7 +3,7 @@
 name: "QUADstatR An introduction to R"
 output_dir: "."
 navbar:
-  title: "QUADstat"
+  title: "QUADstatR"
   icon: fa-home
   left:
     - text: "Setup"
