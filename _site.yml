@@ -1,21 +1,15 @@
 # See http://rmarkdown.rstudio.com/rmarkdown_websites.html
 
-name: "QUADstat an introduction to R"
+name: "QUADstat An introduction to R"
 output_dir: "."
 navbar:
   title: "QUADstat"
   icon: fa-home
   left:
-    - text: "Home"
-      icon: fa-home
-      href: index.html
     - text: "Setup"
       icon: fa-cog
       href: setup.html
-    - text: "Lectures"
-      icon: fa-university
-      href: lectures.html
-    - text: "R book"
+    - text: "R Book"
       icon: fa-book
       menu:
         - text: "Web book"
@@ -25,13 +19,26 @@ navbar:
         - text: "PDF book"
           icon: fa-file-pdf
           href: https://github.com/alexd106/Rbook/raw/master/docs/Rbook.pdf
+    - text: "Learn R"
+      icon: fa-university
+      menu:
+        - text: "How-to videos"
+          icon: fa-tv
+          href: howto.html
         - text: "----"
-        - text: "Old manual"
+        - text: "Lecture slides"
           icon: fa-book
-          href: R-manual_2020.pdf
+          href: lectures.html
     - text: "Exercises"
       icon: fa-book
-      href: exercises.html
+      menu:
+        - text: "Excercises"
+          icon: fa-book
+          href: exercises.html
+        - text: "----"
+        - text: "Exercise solutions"
+          icon: fa-book
+          href: exercise_solutions.html
     - text: "Data"
       icon: fa-download
       href: "data.html"

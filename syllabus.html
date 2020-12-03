@@ -13,6 +13,7 @@
 
 <title>Syllabus</title>
 
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -20,6 +21,9 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -31,6 +35,15 @@
 
   gtag('config', 'UA-162377463-1');
 </script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -266,31 +279,17 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
-    <span class="fa fa-home"></span>
-     
-    Home
-  </a>
-</li>
-<li>
   <a href="setup.html">
     <span class="fa fa-cog"></span>
      
     Setup
   </a>
 </li>
-<li>
-  <a href="lectures.html">
-    <span class="fa fa-university"></span>
-     
-    Lectures
-  </a>
-</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-book"></span>
      
-    R book
+    R Book
      
     <span class="caret"></span>
   </a>
@@ -310,22 +309,59 @@ $(document).ready(function () {
         PDF book
       </a>
     </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-university"></span>
+     
+    Learn R
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="howto.html">
+        <span class="fa fa-tv"></span>
+         
+        How-to videos
+      </a>
+    </li>
     <li class="divider"></li>
     <li>
-      <a href="R-manual_2020.pdf">
+      <a href="lectures.html">
         <span class="fa fa-book"></span>
          
-        Old manual
+        Lecture slides
       </a>
     </li>
   </ul>
 </li>
-<li>
-  <a href="exercises.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-book"></span>
      
     Exercises
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="exercises.html">
+        <span class="fa fa-book"></span>
+         
+        Excercises
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="exercise_solutions.html">
+        <span class="fa fa-book"></span>
+         
+        Exercise solutions
+      </a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="data.html">
@@ -429,33 +465,35 @@ $(document).ready(function () {
 
 
 <p> </p>
-<p>The course will start at 09:30 each morning and finish at 17:00. We will break for a one hour lunch break around 12:00. However, everyone learns R in their own way and at their own pace so this syllabus should be treated as indicative rather than absolute. There will also be plenty of opportunities to take short breaks during the course and we will also have a couple of 30 minute sessions on robust and reproducible research practices. All teaching will be held in room FN113 in the Fraser Noble building (building No. 7 on <a href="images/uoa_map.png" target="_blank">this map</a> on the old Aberdeen campus).</p>
+<p>The course will start at 09:00 each morning and finish at 17:00. We will break for a one hour lunch break around 12:00. However, everyone learns R in their own way and at their own pace so this syllabus should be treated as indicative rather than absolute. There will also be plenty of opportunities to take short breaks during the course and we will also have a couple of 30 minute sessions on robust and reproducible research practices.</p>
+<!--All teaching will be held in room FN113 in the Fraser Noble building (building No. 7 on [this map](images/uoa_map.png){target="_blank"} on the old Aberdeen campus).
+-->
 <p> </p>
-<div id="monday-2nd-december-2019" class="section level4">
-<h4>Monday 2<sup>nd</sup> December 2019</h4>
+<div id="tuesday-26th-january-2021" class="section level4">
+<h4>Tuesday 26<sup>th</sup> January 2021</h4>
 <ul>
-<li>14:00 - 15:30: Drop-in session for software installation issues (Fraser Noble FN113)</li>
+<li>14:00 - 15:30: Drop-in session for software installation issues (MS Teams)</li>
 </ul>
 <p> </p>
 </div>
-<div id="tuesday-3rd-december-2019" class="section level4">
-<h4>Tuesday 3<sup>rd</sup> December 2019</h4>
+<div id="wenesday-27th-january-2021" class="section level4">
+<h4>Wenesday 27<sup>th</sup> January 2021</h4>
 <ul>
 <li><p>Morning: Introduction to the course, getting to know R and RStudio</p></li>
 <li><p>Afternoon: Basic R operations</p></li>
 </ul>
 <p> </p>
 </div>
-<div id="wednesday-4th-december-2019" class="section level4">
-<h4>Wednesday 4<sup>th</sup> December 2019</h4>
+<div id="thursday-28th-january-2021" class="section level4">
+<h4>Thursday 28<sup>th</sup> January 2021</h4>
 <ul>
 <li><p>Morning: Importing and manipulating dataframes</p></li>
 <li><p>Afternoon: Plotting data in R using base and lattice graphics</p></li>
 </ul>
 <p> </p>
 </div>
-<div id="thursday-5th-december-2019" class="section level4">
-<h4>Thursday 5<sup>th</sup> December 2019</h4>
+<div id="friday-29th-january-2021" class="section level4">
+<h4>Friday 29<sup>th</sup> January 2021</h4>
 <ul>
 <li><p>Morning: Simple statistics in R</p></li>
 <li><p>Afternoon: Basic programming in R (optional) or catchup</p></li>
@@ -471,7 +509,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
