@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
 
 \  
 
-1. Start RStudio on your computer. Create a new RStudio Project (select File --> New Project on the main menu). Create the Project in a new directory by selecting 'New Directory' and then select 'New Project'. Give the Project a suitable name in the 'Directory name:' box and choose where you would like to create this Project directory by clicking on the 'Browse' button. Finally create the project by clicking on the 'Create Project' button. This will be your main RStudio Project file and directory which you will use throughout this course.
+1. Start RStudio on your computer. If you haven't already create a new RStudio Project (select File --> New Project on the main menu). Create the Project in a new directory by selecting 'New Directory' and then select 'New Project'. Give the Project a suitable name (quadstatR maybe) in the 'Directory name:' box and choose where you would like to create this Project directory by clicking on the 'Browse' button. Finally create the project by clicking on the 'Create Project' button. This will be your main RStudio Project file and directory which you will use throughout this course.
 
 \  
 
@@ -46,7 +46,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
 
 \  
 
-6. Next, let's practice creating a variable and assigning a value to this variable. Create a variable called ```first_num``` and assign it the value `42`. Click on the 'Environment' tab in the top right window to display the variable and value. Now create another variable called `first_char` and assign it a value `"my first character"`. Notice this variable is now also displayed in the 'Environment' along with it's value and class (`chr` - short for character class). 
+6. Next, let's practice creating a variable and assigning a value to this variable. Don't worry if this doesn't make complete sense to you, we're just getting familiar with RStudio right now (see [Section 2.2](https://intro2r.com/objects-in-r.html) of the Introduction to R book if you want more detail). Create a variable called `first_num` and assign it the value `42`. Click on the 'Environment' tab in the top right window to display the variable and value. Now create another variable called `first_char` and assign it a value `"my first character"`. Notice this variable is now also displayed in the 'Environment' along with it's value and class (`chr` - short for character class). 
 
     ```{r Q6}
     first_num <- 42    # create variable first_num and assign the value 42
@@ -103,11 +103,11 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
     ```
 \  
 
-14.	Let's finish up by creating some useful directories in your Project directory. First use the `dir.create()` function to create a directory called 'data'. This is where you will save all the data files used throughout this course. Now create another directory called 'output' where you will save data files and plots you generate later on during the course. Use the `list.files()` function to list the files in your directory. Can you figure out how to list the directories as well? (hint: see `?listfiles` or Chapter 1.8 of the course book).
+14.	Let's finish up by creating some additional useful directories in your Project directory. If you've followed the **Setup <i class="fa fa-cog" aria-hidden="true"></i>** instructions before attending this course then you will already have a directory called `data` in your Project (if you didn't then take a look at the instructions under **Setup <i class="fa fa-cog" aria-hidden="true"></i>** to create this directory). Now let's create another directory called `output` where you'll save data files and plots you generate later on during this course. This time, instead of clicking on the 'New Folder' icon in RStudio we'll create a new directory using R code directly in the R console (you can also interact with your computer's operating system in all sorts of useful ways). To do this use the `dir.create()` function to create a directory called `output` (See [Section 1.8](https://intro2r.com/dir-struct.html) of the Introduction to R book for more details). If you fancy it, you can also create a subdirectory in your `output` directory called `figures` to store all your fancy R plots for your thesis. You can list all the files in your directories using the `list.files()` function. Can you figure out how to list the directories as well? (hint: see `?listfiles` or [Section 1.8](https://intro2r.com/dir-struct.html) of the course book).
 
     ```{r Q14}
-    dir.create(path = 'data')
-    dir.create(path = 'data')
+    dir.create(path = 'output')
+    dir.create(path = 'output/figures')
     list.files(include.dirs = TRUE)
     ```
 
