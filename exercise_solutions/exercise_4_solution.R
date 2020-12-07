@@ -1,5 +1,6 @@
 ## ----Q4, results = 'asis'-------------------------------------------------------------------------------------------------
-squid <- read.table('workshop/data/squid1.txt', header =TRUE)
+squid <- read.table('workshop/data/squid1.txt', header =TRUE, 
+                     stringsAsFactors = TRUE)
 
 str(squid)
 # 'data.frame':	519 obs. of  13 variables:

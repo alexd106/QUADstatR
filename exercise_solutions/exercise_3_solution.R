@@ -1,5 +1,5 @@
 ## ----Q5-------------------------------------------------------------------------------------------------------------------
-whale <- read.table('workshop/data/whaledata.txt', header = TRUE)
+whale <- read.table('workshop/data/whaledata.txt', header = TRUE, stringsAsFactors = TRUE)
 
 
 ## ----Q6, results = 'asis'-------------------------------------------------------------------------------------------------

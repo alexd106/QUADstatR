@@ -1,9 +1,10 @@
 ## ----Q1, results = 'asis'-------------------------------------------------------------------------------------------------
-prawns <- read.table('workshop/data/prawnGR.CSV', sep = ",", header = TRUE)
+prawns <- read.table('workshop/data/prawnGR.CSV', sep = ",", header = TRUE,
+                     stringsAsFactors = TRUE)
 
 # or
 
-prawns <- read.csv("workshop/data/prawnGR.CSV")
+prawns <- read.csv("workshop/data/prawnGR.CSV", stringsAsFactors = TRUE)
 
 # take a look at the data
 str(prawns)
@@ -152,11 +153,13 @@ plot(growth.lm)
 
 
 ## ----Q7, tidy = TRUE------------------------------------------------------------------------------------------------------
-gigartina <- read.table('workshop/data/Gigartina.CSV', header = TRUE, sep = ",")
+gigartina <- read.table('workshop/data/Gigartina.CSV', header = TRUE, sep = ",",
+                        stringsAsFactors = TRUE)
 
 # or
 
-gigartina <- read.csv('workshop/data/Gigartina.CSV')
+gigartina <- read.csv('workshop/data/Gigartina.CSV',
+                        stringsAsFactors = TRUE)
 
 str(gigartina)
 # 'data.frame':	40 obs. of  2 variables:
@@ -260,11 +263,13 @@ plot(TukeyHSD(gigartina.av), cex.axis = 0.5, las = 2)
 
 
 ## ----Q15, tidy = TRUE-----------------------------------------------------------------------------------------------------
-temora <- read.table('workshop/data/TemoraBR.CSV', header = TRUE, sep = ",")
+temora <- read.table('workshop/data/TemoraBR.CSV', header = TRUE, sep = ",",
+                        stringsAsFactors = TRUE)
 
 # or
 
-temora <- read.csv('workshop/data/TemoraBR.CSV')
+temora <- read.csv('workshop/data/TemoraBR.CSV',
+                        stringsAsFactors = TRUE)
 
 str(temora)
 

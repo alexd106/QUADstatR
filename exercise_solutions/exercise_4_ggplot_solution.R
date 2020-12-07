@@ -1,16 +1,19 @@
 ## ----packages-------------------------------------------------------------------------------------------------------------
 
-# make ggplot2 and gridExtra packages available
+# make ggplot2, gridExtra and GGally packages available
 # Note: you may need to install these packages first
 # Use : install.packages('ggplot2', dep = TRUE)
 # Use : install.packages('gridExtra', dep = TRUE)
+# Use : install.packages('GGally', dep = TRUE)
 
 library(ggplot2)
 library(gridExtra)
+library(GGally)
 
 
 ## ----Q4, results = 'asis'-------------------------------------------------------------------------------------------------
-squid <- read.table('workshop/data/squid1.txt', header =TRUE)
+squid <- read.table('workshop/data/squid1.txt', header =TRUE, 
+                     stringsAsFactors = TRUE)
 
 str(squid)
 # 'data.frame':	519 obs. of  13 variables:
