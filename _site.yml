@@ -30,14 +30,14 @@ navbar:
           icon: fa-book
           href: lectures.html
     - text: "Exercises"
-      icon: fa-book
+      icon: fa-file-contract
       menu:
         - text: "Excercises"
-          icon: fa-book
+          icon: fa-folder
           href: exercises.html
         - text: "----"
         - text: "Exercise solutions"
-          icon: fa-book
+          icon: fa-folder
           href: exercise_solutions.html
     - text: "Data"
       icon: fa-download
