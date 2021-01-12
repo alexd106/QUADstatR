@@ -4,6 +4,7 @@ show_text34 <- TRUE    # ex 3 and 4
 show_text56 <- TRUE    # ex 5 and 6
 
 # Change to TRUE to show lectures
+show_lecture <- TRUE
 show_lecture_pdf <- FALSE
 
 # Change to TRUE to show exercises

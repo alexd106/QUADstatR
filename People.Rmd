@@ -58,9 +58,9 @@ knitr::include_graphics("images/blaauw_cropped.png")
 
 \  
 
-Maarten is a Reader in XXX at Queen's University Belfast researching XX. He has been using and teaching R for XXX years. 
+Maarten is a Reader in Palaeoecology at Queen’s University Belfast researching age-modelling. He has been using and teaching R for 18 years. 
 
-- Email: maarten(dot)blauuw(at)qub(dot)ac(dot)uk
+- Email: maarten(dot)blaauw(at)qub(dot)ac(dot)uk
 - Web: https://pure.qub.ac.uk/en/persons/maarten-blaauw
 - GitHub:  https://github.com/Maarten14C
 
