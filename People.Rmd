@@ -39,7 +39,7 @@ knitr::include_graphics("images/emmerson_cropped.png")
 
 \  
 
-Mark is a Professor of Biodiversity at Queen's University Belfast researching XXX. He has been using and teaching R for XXX years. 
+Mark is a Professor of Biodiversity at Queen's University Belfast. He has been using and teaching R for many years. 
 
 - Email: m(dot)emmerson(at)qub(dot)ac(dot)uk
 - Web: https://pure.qub.ac.uk/en/persons/mark-emmerson
