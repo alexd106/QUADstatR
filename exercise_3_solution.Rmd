@@ -40,7 +40,7 @@ Read [Chapter 3](https://intro2r.com/data-r.html) to help you complete the quest
 5. Now let's import the *‘whaledata.txt'* file into R. To do this you will use the workhorse function of data importing,  `read.table()`. This function is incredibly flexible and can import many different file types (take a look at the help file) including our tab delimited file. Don't forget to include the appropriate arguments when using the `read.table()` function (remember that header?) and assign it a variable with an appropriate name (such as `whale`). Take a look at [Section 3.2.2](https://intro2r.com/importing-data.html#import_fnc) of the Introduction to R book if you need any further information.
 
     ```{r Q5}
-    whale <- read.table('workshop/data/whaledata.txt', header = TRUE, stringsAsFactors = TRUE)
+    whale <- read.table('data/whaledata.txt', header = TRUE, stringsAsFactors = TRUE)
     ```
 
 \  
