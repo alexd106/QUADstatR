@@ -61,11 +61,14 @@ navbar:
           href: "resources.html"
         - text: "Feedback"
           icon: fa-commenting
-          href: https://forms.gle/ezFyn6bMVYCt75rB6
+          href: 
         - text: "----"
         - text: "QUADRAT"
           icon: fa-chrome
           href: https://www.quadrat.ac.uk/
+        - text: "SUPER"
+          icon: fa-chrome
+          href: https://superdtp.st-andrews.ac.uk/
         - text: "Contact"
           icon: fa-envelope fa-lg
           href: People.html

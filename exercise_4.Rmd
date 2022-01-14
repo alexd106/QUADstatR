@@ -14,8 +14,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
 ## Exercise 4: Visualising data using base R and lattice graphics
 
 \  
-
-Read [Chapter 4](https://intro2r.com/graphics-base-r.html) to help you complete the questions in this exercise.
+In this exercise you'll practice using some of R's plotting functions to help you easily produce informative and useful plots of your data. You will also have the opportunity to practice customising plots to get them to look how you want them. Please read (or refer back to) [Chapter 4](https://intro2r.com/graphics-base-r.html) of the R book to help you complete the questions in this exercise.
 
 \  
 
