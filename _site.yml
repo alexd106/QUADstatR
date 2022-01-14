@@ -61,7 +61,7 @@ navbar:
           href: "resources.html"
         - text: "Feedback"
           icon: fa-commenting
-          href: 
+          href: https://forms.gle/6H2wztpdNjXPzhcq6
         - text: "----"
         - text: "QUADRAT"
           icon: fa-chrome
