@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo=TRUE, message = FALSE, warning = FALSE, eval = FALSE,
 
 \  
 
-Read [Chapter 3](https://intro2r.com/data-r.html) to help you complete the questions in this exercise.
+In this exercise you'll learn how to import your data into R as a dataframe object, how to usefully summarise and manipulate dataframes and finally how to export data from R. All of this material is covered in [Chapter 3](https://intro2r.com/data-r.html) of the Introduction to R book.
 
 \  
 
