@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALS
 
 \  
 
-This exercise will introduce you to the different components of RStudio, introduce you to writing R scripts, assigning values to variables in R, getting help in R and setting up a typical project in RStudio. Yopu should read (or refer back to) [Chapter 1](https://intro2r.com/chap1.html) to help you complete the questions in this exercise.
+This exercise will introduce you to the different components of RStudio, introduce you to writing R scripts, assigning values to variables in R, getting help in R and setting up a typical project in RStudio. You should read (or refer back to) [Chapter 1](https://intro2r.com/chap1.html) to help you complete the questions in this exercise.
 
 \  
 
