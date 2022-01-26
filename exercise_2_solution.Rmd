@@ -71,8 +71,8 @@ This exercise will help you get familiar with performing some basic (but useful)
     range(weight)                               # range of weight values
     length(weight)                              # number of observations
     
-    first_five <- weights[1:5]                  # extract first 5 weight values
-    first_five <- weights[c(1, 2, 3, 4, 5)]     # alternative method
+    first_five <- weight[1:5]                  # extract first 5 weight values
+    first_five <- weight[c(1, 2, 3, 4, 5)]     # alternative method
     ```
 
 \  
