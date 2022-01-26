@@ -62,7 +62,7 @@ This exercise will help you get familiar with performing some basic (but useful)
 
 \  
 
-6. You can now do stuff to your `weight` vector. Get R to calculate the mean, variance, standard deviation, range of weights and the number of children of your `weights` vector ([Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r)). Next, extract the weights for the first five children and store these weights in a new variable called `first_five`. Remember, you will need to use the square brackets `[ ]` to extract (aka indexing, subsetting) elements from a variable. [Section 2.4.1](https://intro2r.com/vectors.html#extracting-elements) introduces using the `[]` notation.
+6. You can now do stuff to your `weight` vector. Get R to calculate the mean, variance, standard deviation, range of weights and the number of children of your `weight` vector ([Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r)). Next, extract the weights for the first five children and store these weights in a new variable called `first_five`. Remember, you will need to use the square brackets `[ ]` to extract (aka indexing, subsetting) elements from a variable. [Section 2.4.1](https://intro2r.com/vectors.html#extracting-elements) introduces using the `[]` notation.
 
     ```{r Q6, results = 'asis'}
     mean(weight)                                # calculate mean 
