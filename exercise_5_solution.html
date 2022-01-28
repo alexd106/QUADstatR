@@ -787,7 +787,7 @@ $(document).ready(function () {
 </ol>
 <p> </p>
 <ol start="13" style="list-style-type: decimal">
-<li><p>We will use the function <code>TukeyHSD.lm()</code> from the <code>mosaic</code> package to perform these comparisons (you will need to install this package first and then use <code>library(mosaic)</code> to make the function available). Which groups are different from each other if we use the p-value cutoff (alpha) of p &lt; 0.05?</p>
+<li><p>We will use the function <code>TukeyHSD()</code> from the <code>mosaic</code> package to perform these comparisons (you will need to install this package first and then use <code>library(mosaic)</code> to make the function available). Which groups are different from each other if we use the p-value cutoff (alpha) of p &lt; 0.05?</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what group mean is different from what? Post-hoc comparisons.</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># we will use Tukey&#39;s Honest significant difference method </span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># to compare group means.</span></span>
@@ -797,7 +797,7 @@ $(document).ready(function () {
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># compare the group means using TukeysHSD method</span></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD.lm</span>(gigartina.lm)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(gigartina.lm)</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   Tukey multiple comparisons of means</span></span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     95% family-wise confidence level</span></span>
@@ -821,8 +821,8 @@ $(document).ready(function () {
 </ol>
 <p> </p>
 <ol start="14" style="list-style-type: decimal">
-<li><p>We can also produce a plot of the comparisons to help us interpret the table of comparisons. Use the <code>plot()</code> function with the <code>TukeyHSD.lm(gigartina.lm)</code>. Ask if you get stuck (or Google it!).</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">TukeyHSD.lm</span>(gigartina.lm), <span class="at">cex.axis =</span> <span class="fl">0.5</span>, <span class="at">las =</span> <span class="dv">2</span>)</span></code></pre></div></li>
+<li><p>We can also produce a plot of the comparisons to help us interpret the table of comparisons. Use the <code>plot()</code> function with the <code>TukeyHSD(gigartina.lm)</code>. Ask if you get stuck (or Google it!).</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">TukeyHSD</span>(gigartina.lm), <span class="at">cex.axis =</span> <span class="fl">0.5</span>, <span class="at">las =</span> <span class="dv">2</span>)</span></code></pre></div></li>
 </ol>
 <p> </p>
 <ol start="15" style="list-style-type: decimal">

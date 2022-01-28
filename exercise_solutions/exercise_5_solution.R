@@ -235,7 +235,7 @@ library(mosaic)
 
 # compare the group means using TukeysHSD method
 
-TukeyHSD.lm(gigartina.lm)
+TukeyHSD(gigartina.lm)
  
 #   Tukey multiple comparisons of means
 #     95% family-wise confidence level
@@ -259,7 +259,7 @@ TukeyHSD.lm(gigartina.lm)
 
 
 ## ----Q14---------------------------------------------------------------------------------------------------------------------
-plot(TukeyHSD.lm(gigartina.lm), cex.axis = 0.5, las = 2)
+plot(TukeyHSD(gigartina.lm), cex.axis = 0.5, las = 2)
 
 
 ## ----Q15, tidy = TRUE--------------------------------------------------------------------------------------------------------
