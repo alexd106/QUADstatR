@@ -17,6 +17,10 @@ knitr::opts_chunk$set(echo=TRUE, message = FALSE, warning = FALSE, eval = FALSE,
 
 \  
 
+Read [Chapter 4](https://intro2r.com/graphics-base-r.html) to help you complete the questions in this exercise.
+
+\  
+
 1\. As in previous exercises, either create a new R script or continue with your previous R script in your RStudio Project. Again, make sure you include any metadata you feel is appropriate (title, description of task, date of creation etc) and  don't forget to comment out your metadata with a `#` at the beginning of the line. 
 
 \  
@@ -122,7 +126,7 @@ ftable(xtabs(~ Fyear + Fmaturity + Fmonth, data = squid))
 
 \  
 
-6\. The humble cleveland dotplot is a great way of identifying if you have potential outliers in continuous variables (See [Section 4.2.4](https://intro2r.com/simple-base-r-plots.html#dotcharts)). Create dotplots (using the `dotchart()` function) for the following variables; `DML`, `weight`, `nid.length` and `ovary.weight`. Do these variables contain any unusually large or small observations? Don't forget, if you prefer to create a single figure with all 4 plots you can always split your plotting device into 2 rows and 2 columns (see [Section 4.4](https://intro2r.com/mult-graphs.html#mult_graphs) of the book). Use the `pdf()` function to save a pdf version of your plot(s) in your `output` directory you created in Exercise 1 (see [Section 4.5](https://intro2r.com/export-plots.html#export_plots) of the book to see how the `pdf()` function works). I have also included some alternative code in the [solutions for this exercise](exercise_4_solution.html) using the `dotplot()` function from the `lattice` package.
+6\. The humble cleveland dotplot is a great way of identifying if you have potential outliers in continuous variables (See [Section 4.2.4](https://intro2r.com/simple-base-r-plots.html#dotcharts)). Create dotplots (using the `dotchart()` function) for the following variables; `DML`, `weight`, `nid.length` and `ovary.weight`. Do these variables contain any unusually large or small observations? Don't forget, if you prefer to create a single figure with all 4 plots you can always split your plotting device into 2 rows and 2 columns (see [Section 4.4](https://intro2r.com/mult_graphs.html#mult_graphs) of the book). Use the `pdf()` function to save a pdf version of your plot(s) in your `output` directory you created in Exercise 1 (see [Section 4.5](https://intro2r.com/export_plots.html#export_plots) of the book to see how the `pdf()` function works). I have also included some alternative code in the [solutions for this exercise](exercise_4_solution.html) using the `dotplot()` function from the `lattice` package.
 
 ```{r Q6}
 pdf('figures/ex4_dotplots.pdf')
@@ -149,7 +153,7 @@ dotplot(as.matrix(squid[,c("DML", "weight", "nid.length", "ovary.weight")]),
 
 \  
 
-7\. It looks like the variable `nid.length` contains an unusually large value. Actually, this value is biologically implausible and clearly an error. The researchers were asked to go back and check their field notebooks and sure enough they discover a typo. It looks like a tired researcher accidentally inserted a zero by mistake when transcribing these data. We can clearly see this value is over 400 so we can use the `which()` function to identify which observation this is `which(squid$nid.length > 400)`. It looks like this is the 11^th^ observation of the `squid$nid.length` variable. Use your skill with the square brackets `[ ]` to first confirm the this is the correct value (you should get 430.2) and then change this value to 43.2 (use the `[ ]` notation again. Do **not** use the data editor in RStudio as this is not reproducible!). Now redo the dotchart to visualise your correction. Caution: You can only do this because you have confirmed that this is a transcribing error. You should **not** remove or change values in your data just because you feel like it or they look 'unusual'. This is scientific fraud! Also, the advantage of making this change in your R script rather than in Excel is that you now have a permanent record of the change you made and can state a clear reason for the change.    
+7\. It looks like the variable `nid.length` contains an unusually large value. Actually, this value is biologically implausible and clearly an error. The researchers were asked to go back and check their field notebooks and sure enough they discover a typo. It looks like a tired researcher accidentally inserted a zero by mistake when transcribing these data (mistakes in data are very common and why we **always** explore, check and validate any data we are working on). We can clearly see this value is over 400 so we can use the `which()` function to identify which observation this is `which(squid$nid.length > 400)`. It looks like this is the 11^th^ observation of the `squid$nid.length` variable. Use your skill with the square brackets `[ ]` to first confirm the this is the correct value (you should get 430.2) and then change this value to 43.2. Now redo the dotchart to visualise your correction. Caution: You can only do this because you have confirmed that this is an transcribing error. You should **not** remove or change values in your data just because you feel like it or they look 'unusual'. This is scientific fraud! Also, the advantage of making this change in your R script rather than in Excel is that you now have a permanent record of the change you made and can state a clear reason for the change.    
 
 ```{r Q7}
 which(squid$nid.length > 400)
@@ -167,7 +171,7 @@ dotchart(squid$nid.length, main = "nid length")
 
 \  
  
-8\. When exploring your data it is often useful to visualise the distribution of continuous variables. Take a look at [Section 4.2.2](https://intro2r.com/simple-base-r-plots.html#histograms) and then create histograms for the variables; `DML`, `weight`, `eviscerate.weight` and `ovary.weight`. Again, it's up to you if you want to plot all 4 plots separately or in the same figure. Export your plot(s) as pdf file(s) to the `output` directory. One potential problem with histograms is that the distribution of data can look quite different depending on the number of 'breaks' used. The `hist()` function does its best to create appropriate 'breaks' for your plots (it uses the [Sturges algorithm](https://en.wikipedia.org/wiki/Histogram) for those that want to know) but experiment with changing the number of breaks for the `DML` variable to see how the shape of the distribution changes (see [Section 4.2.2](https://intro2r.com/simple-base-r-plots.html#histograms) of the book for further details of how to change the breaks).    
+8\. When exploring your data it is often useful to visualise the distribution of continuous variables. Take a look at [Section 4.2.2](https://intro2r.com/simple-base-r-plots.html#histograms) and then create histograms for the variables; `DML`, `weight`, `eviscerate.weight` and `ovary.weight`. Again, its up to you if you want to plot all 4 plots separately or in the same figure. Export your plot(s) as pdf file(s) to the `output` directory. One potential problem with histograms is that the distribution of data can look quite different depending on the number of 'breaks' used. The `hist()` function does it's best to create appropriate 'breaks' for your plots (it uses the [Sturges algorithm](https://en.wikipedia.org/wiki/Histogram) for those that want to know) but experiment with changing the number of breaks for the `DML` variable to see how the shape of the distribution changes (see [Section 4.2.2](https://intro2r.com/simple-base-r-plots.html#histograms) of the book for further details of how to change the breaks).      
 
 ```{r Q8}
 pdf('workshop/figures/ex4_hist.pdf')
@@ -202,7 +206,7 @@ hist(squid$DML, xlab = "DML", breaks = brk4, main = "brk: 2")
 
 \  
 
-9\. Scatterplots are great for visualising relationships between two continuous variables ([Section 4.2.1](https://intro2r.com/simple-base-r-plots.html#scatterplot)). Plot the relationship between `DML` on the x axis and `weight` on the y axis. How would you describe this relationship? Is it linear? One approach to linearising relationships is to apply a transformation on one or both variables. Try transforming the `weight` variable with either a natural log (`log()`) or square root (`sqrt()`) transformation. I suggest you create new variables in the `squid` dataframe for your transformed variables and use these variables when creating your new plots (ask if you're not sure how to do this). Which transformation best linearises this relationship? Again, save your plots as a pdf file (or try saving in your `output` directory as jpeg or png format using the `jpeg()` or `png()` functions - [Section 4.5](https://intro2r.com/export-plots.html#export_plots) if you feel the need for a change!).
+9\. Scatterplots are great for visualising relationships between two continuous variables ([Section 4.2.1](https://intro2r.com/simple-base-r-plots.html#scatterplot)). Plot the relationship between `DML` on the x axis and `weight` on the y axis. How would you describe this relationship? Is it linear? One approach to linearising relationships is to apply a transformation on one or both variables. Try transforming the `weight` variable with either a natural log (`log()`) or square root (`sqrt()`) transformation. I suggest you create new variables in the `squid` dataframe for your transformed variables and use these variables when creating your new plots (ask if you're not sure how to do this). Which transformation best linearises this relationship? Again, save your plots as a pdf file (or try saving in your `output` directory as jpeg or png format using the `jpeg()` or `png()` functions - [Section 4.5](https://intro2r.com/export_plots.html#export_plots) if you feel the need for a change!).
 
 ```{r Q9}
 # clearly not linear
@@ -270,15 +274,18 @@ pairs(squid[,c(5, 8, 9, 11, 12, 13)], diag.panel = panel.hist, upper.panel = pan
 
 \  
 
-13\. Almost every aspect of the figures you create in R is customisable. Learning how to get your plot looking just right is not only rewarding but also means that you will never have to include a plot in your paper/thesis that you're not completely happy with. When you start learning how to use R it can sometimes seem to take a lot of work to customise your plots. Don't worry, it gets easier with experience (most of the time anyway) and you will always have your code if you want to create a similar plot in the future. Use the `plot()` function to produce a scatterplot of DML on the x axis and ovary weight on the y axis (you might need to apply a transformation on the variable `ovary.weight`). Use a different colour to highlight points for each level of maturity stage. Produce a legend explaining the different colours and place it in a suitable position on the plot. Format the graph further to make it suitable for inclusion into your paper/thesis (i.e. add axes labels, change the axes scales etc). See [Section 4.3](https://intro2r.com/custom-plot.html#custom_plot) for more details about customising plots.
+13\. Almost every aspect of the figures you create in R is customisable. Learning how to get your plot looking just right is not only rewarding but also means that you will never have to include a plot in your paper/thesis that you're not completely happy with. When you start learning how to use R it can sometimes seem to take a lot of work to customise your plots. Don't worry, it gets easier with experience (most of the time anyway) and you will always have your code if you want to create a similar plot in the future. Use the `plot()` function to produce a scatterplot of DML on the x axis and ovary weight on the y axis (you might need to apply a transformation on the variable `ovary.weight`). Use a different colour to highlight points for each level of maturity stage. Produce a legend explaining the different colours and place it in a suitable position on the plot. Format the graph further to make it suitable for inclusion into your paper/thesis (i.e. add axes labels, change the axes scales etc). See [Section 4.3](https://intro2r.com/custom_plot.html#custom_plot) for more details about customising plots. I have given you a few different solutions in the code below. give them a go!
 
-```{r Q13a, tidy = TRUE}
+```{r Q13a}
 # quick and dirty way
 # need to transform ovary.weight first
 squid$ovary.weight.sqrt <- sqrt(squid$ovary.weight)
 
 # create the plot
-with(squid, plot(DML, ovary.weight.sqrt, xlab = "DML (mm)", ylab = "square root ovary weight (g)", col = as.numeric(Fmaturity), xlim =     c(60, 350), ylim = c(0, 8.5)))
+with(squid, plot(DML, ovary.weight.sqrt, xlab = "DML (mm)", 
+                 ylab = "square root ovary weight (g)", 
+                 col = as.numeric(Fmaturity), 
+                 xlim = c(60, 350), ylim = c(0, 8.5)))
 
 # create the legend
 labs <- c("stage 1", "stage 2", "stage 3", "stage 4","stage 5")
@@ -286,7 +293,7 @@ cols <- as.numeric(levels(squid$Fmaturity))
 legend("topleft", labs,col = cols, pch = 1)
 ```
 
-```{r Q13b, tidy = TRUE}
+```{r Q13b}
 # longer but more control
 
 # need to scales package to set transparency of points
@@ -294,20 +301,52 @@ legend("topleft", labs,col = cols, pch = 1)
 library(scales)
 
 #setup the axes but dont plot the points
-with(squid, plot(DML, ovary.weight.sqrt, xlab = "DML (mm)", ylab = "square root ovary weight (g)",
-					type = "n", xlim = c(60, 350), ylim = c(0, 8.5)))
+with(squid, plot(DML, ovary.weight.sqrt, xlab = "DML (mm)", 
+                 ylab = "square root ovary weight (g)",
+                 type = "n", xlim = c(60, 350), ylim = c(0, 8.5)))
 
 # plot the points with custom colours
-with(squid, points(DML[Fmaturity == "1"], ovary.weight.sqrt[Fmaturity == "1"], col = alpha("deepskyblue3", 0.7), pch = 16))
-with(squid, points(DML[Fmaturity == "2"], ovary.weight.sqrt[Fmaturity == "2"], col = alpha("darkolivegreen3", 0.7), pch = 16))
-with(squid, points(DML[Fmaturity == "3"], ovary.weight.sqrt[Fmaturity == "3"], col = alpha("coral3", 0.7), pch = 16))
-with(squid, points(DML[Fmaturity == "4"], ovary.weight.sqrt[Fmaturity == "4"], col = alpha("lemonchiffon3", 0.7), pch = 16))
-with(squid, points(DML[Fmaturity == "5"], ovary.weight.sqrt[Fmaturity == "5"], col = alpha("darkorchid3", 0.7), pch = 16))
+with(squid, points(DML[Fmaturity == "1"], ovary.weight.sqrt[Fmaturity == "1"], 
+                   col = alpha("deepskyblue3", 0.7), pch = 16))
+with(squid, points(DML[Fmaturity == "2"], ovary.weight.sqrt[Fmaturity == "2"], 
+                   col = alpha("darkolivegreen3", 0.7), pch = 16))
+with(squid, points(DML[Fmaturity == "3"], ovary.weight.sqrt[Fmaturity == "3"], 
+                   col = alpha("coral3", 0.7), pch = 16))
+with(squid, points(DML[Fmaturity == "4"], ovary.weight.sqrt[Fmaturity == "4"], 
+                   col = alpha("lemonchiffon3", 0.7), pch = 16))
+with(squid, points(DML[Fmaturity == "5"], ovary.weight.sqrt[Fmaturity == "5"], 
+                   col = alpha("darkorchid3", 0.7), pch = 16))
     
 # include the legend
 labs <- c("stage 1", "stage 2", "stage 3", "stage 4","stage 5")
-cols <- c("deepskyblue3", "darkolivegreen3", "coral3", "lemonchiffon3", "darkorchid3")
+cols <- c("deepskyblue3", "darkolivegreen3", "coral3", 
+          "lemonchiffon3", "darkorchid3")
 legend(55, 8.2, labs,col = alpha(cols, 0.7), pch = 16, bty = "n")
+```
+
+
+```{r Q13c}
+# or use the ggplot2 package
+# square root transform ovary weight
+squid$ovary.weight.sqrt <- sqrt(squid$ovary.weight)
+
+library(ggplot2)
+ggplot(data = squid) +
+  geom_point(aes(x = DML, y = ovary.weight.sqrt, colour = Fmaturity), 
+             alpha = 0.8, size = 2) +
+  scale_colour_manual(values = c("deepskyblue3", "darkolivegreen3", "coral3", 
+                                 "lemonchiffon3", "darkorchid3"), 
+                      labels = c("stage 1", "stage 2", "stage 3", 
+                                 "stage 4", "stage 5")) +
+ theme_classic(base_size = 12) +
+  labs(colour = "", x = "DML (mm)", y = "square root ovary weight (g)")
+
+# OR
+ggplot(data = squid) +
+  geom_point(aes(x = DML, y = ovary.weight.sqrt, colour = Fmaturity), 
+             alpha = 0.8, size = 2) +
+  theme_classic() +
+  labs(colour = "", x = "DML (mm)", y = "square root ovary weight (g)")
 ```
 
 \  

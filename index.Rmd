@@ -32,12 +32,12 @@ This course assumes no previous experience or knowledge of using either R or RSt
 \  
 
 #### What is the course timetable?
-See the course [syllabus](syllabus.html) for a general outline of the course content and timing. The course will start at 09:00 each morning and finish at 17:00. We will break for a one hour lunch break around 12:30. However, everyone learns R in their own way and at their own pace so this syllabus should be treated as indicative rather than absolute. There will also be plenty of opportunities to take short breaks during the course and we will also have a couple of 30 minute sessions on robust and reproducible research practices.  
+See the course [syllabus](syllabus.html) for a general outline of the course content and timing. The course will start at 09:30 each morning and finish at 17:00. We will break for a one hour lunch break around 12:30. However, everyone learns R in their own way and at their own pace so this syllabus should be treated as indicative rather than absolute. There will also be plenty of opportunities to take short breaks during the course and we will also have a couple of 30 minute sessions on robust and reproducible research practices.  
 
 \  
 
 #### Where is the course held?
-This course will be run entirely online this year due to National Government Covid-19 restrictions. All interactive live sessions will be run using Blackboard Collaborate via [MyAberdeen](https://abdn.blackboard.com/). During these live sessions you will all be working in the main meeting room as you work through the associated course exercises. If you have a question, or get stuck you'll be able to get 1:1 support from one of the course instructors in a smaller breakout group. More information about this setup will be provided during the first session on Wednesday 26^th^ January 2022.   
+This course will be run entirely online this year. All interactive live sessions will be run using Blackboard Collaborate via [MyAberdeen](https://abdn.blackboard.com/). During these live sessions you will all be working in the main meeting room as you work through the associated course exercises. If you have a question, or get stuck you'll be able to get 1:1 support from one of the course instructors in a smaller breakout group. More information about this setup will be provided during the first session on Wednesday 26^th^ January 2022.   
 
 <!--
 will be teaching will be held in room FN113 in the Fraser Noble building (building No. 7 on [this map](images/uoa_map.png) on the old Aberdeen campus). For those of you unfamiliar with the Aberdeen campus I have also indicated on the map where you can grab a bite to eat or a caffeine hit!
