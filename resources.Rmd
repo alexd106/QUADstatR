@@ -10,8 +10,8 @@ output:
 
 ### Getting Help
 
-- [Google it!](https://letmegooglethat.com//?q=R+Error+in+library+there+is+no+package+called): Try Googling generalized versions of any error messages you get. That is, remove text that is specific to your problem (names of variables, paths, datasets, etc.). You'd be surprised how many other people have probably had the same problem and solved it.
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/r): There are over 100,000 questions tagged with "R" on Stack Overflow. [Here are the most popular ones, ranked by vote](https://stackoverflow.com/questions/tagged/r?sort=votes). Always search before asking, and make a [reproducible example](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610) if you want to get useful advice. This is a minimal example that allows others who are trying to help you to see the error themselves.
+- [Google it!](https://letmegooglethat.com//?q=R+Error+in+library+there+is+no+package+called): Try searching for generalised versions of any error messages you get whilst running your code. To generalise, remove text that is specific to your problem (i.e. names of variables, file paths, datasets, etc.). You'd be surprised how many other people have probably had the same problem and solved it.
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/r): There are over 450,000 questions tagged with 'R' on Stack Overflow. [Here are the most popular ones, ranked by vote](https://stackoverflow.com/questions/tagged/r?sort=votes). Always search before asking, and make a [reproducible example](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610) if you want to get useful advice. This is a minimal example that allows others who are trying to help you to see the error themselves.
 - Read package vignettes. For example, see the [lme4 CRAN page](https://cran.r-project.org/web/packages/lme4/vignettes/lmer.pdf) to learn how to fit linear mixed effects models using the lme4 package. 
 
 \  
