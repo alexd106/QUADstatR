@@ -11,7 +11,7 @@
 
 
 
-<title>Exercises</title>
+<title>FAQ</title>
 
 <script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -436,201 +436,165 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Exercises</h1>
+<h1 class="title toc-ignore">FAQ</h1>
 
 </div>
 
 
 <p> </p>
-<div id="exercise-5-basic-statistics-in-r" class="section level2">
-<h2>Exercise 5: Basic statistics in R</h2>
+<div id="how-do-i-use-this-website" class="section level4">
+<h4>How do I use this website?</h4>
+<p>How you use this website to support your learning and understanding
+of R is of course up to you. Having said that here are few pointers that
+have worked for people in the past. The first thing you will need to do
+is download and install both R and RStudio on your computer. Take a look
+at the <strong><i class="fa fa-cog" aria-hidden="true"></i>
+Setup</strong> link on the navbar at the top of this page for further
+instructions on how to set up your computer and download the required
+datasets. At the heart of this course is our ‘Introduction to R book’
+which you can find by clicking on the
+<strong><i class="fa fa-book" aria-hidden="true"></i> R Book</strong>
+link in the navbar. The book is split into 9 Chapters which cover
+different aspects of using R and RStudio, from general orientation,
+basic R operations, importing and manipulating data, plotting data,
+programming in R, R markdown and using version control. You can test
+your understanding of each of these components by completing the
+associated exercises which you can find by clicking on
+<strong><i class="fa fa-file-contract" aria-hidden="true"></i>
+Exercises</strong>. You will also find the solutions to the exercises
+here but we suggest that you don’t peek at the solutions too quickly and
+only use them to confirm your answers or if you get stuck and feel like
+throwing your keyboard out of the window! There are also some additional
+resources such as lecture slides we use during our in person courses,
+short how-to videos walking you through some important topics which you
+can find in the
+<strong><i class="fa fa-university" aria-hidden="true"></i> Learn
+R</strong> link. We’ve also created some stand alone tutorials covering
+topics such as RStudio Projects, R markdown and version control using
+Git and GitHub which can be found under the
+<strong><i class="fa fa-desktop" aria-hidden="true"></i>
+Tutorials</strong> link. We suggest that you take a look at the
+tutorials once you’ve finished the core part of this course.</p>
 <p> </p>
-<p>Read <a href="https://intro2r.com/stats-r.html">Chapter 6</a> to help
-you complete the questions in this exercise.</p>
+</div>
+<div id="what-are-the-pre-requisites-for-this-course"
+class="section level4">
+<h4>What are the pre-requisites for this course?</h4>
+<p>This course assumes no previous experience or knowledge of using
+either R or RStudio. It also doesn’t assume any knowledge of programming
+or using a command-line interface, but if you have some experience, the
+content won’t come as so much of a shock. But don’t panic. Command-line
+interfaces and programming languages like R are incredibly powerful and
+will be utterly transformative to your research. There’s a learning
+curve, and it’s pretty steep in the beginning, but it’s surmountable and
+the payoff is worth it!</p>
 <p> </p>
-<p>Although this short course is primarily focussed on introducing you
-to R, it wouldn’t be complete if we didn’t have a quick peek at some of
-R’s statistical roots. Having said that, this will be a very brief
-overview with very little in the way of theory so don’t worry if you get
-a little lost - this is just a taster, the main course is still to
-come!</p>
+</div>
+<div id="what-is-the-course-timetable" class="section level4">
+<h4>What is the course timetable?</h4>
+<p>See the course <a href="syllabus.html">syllabus</a> for a general
+outline of the course content and timing. The course will start at 09:30
+each morning and finish at 17:00. We will break for a one hour lunch
+break around 12:30. However, everyone learns R in their own way and at
+their own pace so this syllabus should be treated as indicative rather
+than absolute. There will also be plenty of opportunities to take short
+breaks during the course and we will also have a couple of 30 minute
+sessions on robust and reproducible research practices.</p>
 <p> </p>
-<p>1. Download the datafile <em>‘prawnGR.CSV’</em> from the <strong><a
-href="data.html"><i class="fa fa-download"></i> Data</a></strong> link
-and save it to the <code>data</code> directory. Import these data into R
-and assign to a variable with an appropriate name. These data were
-collected from an experiment to investigate the difference in growth
-rate of the <a
-href="https://en.wikipedia.org/wiki/Penaeus_monodon">giant tiger
-prawn</a> (<em>Penaeus monodon</em>) fed either an artificial or natural
-diet. Have a quick look at the structure of this dataset and plot the
-growth rate versus the diet using an appropriate plot. How many
-observations are there in each diet treatment?</p>
+</div>
+<div id="where-is-the-course-held" class="section level4">
+<h4>Where is the course held?</h4>
+<p>This course will be run entirely online this year. All interactive
+live sessions will be run using Blackboard Collaborate via <a
+href="https://abdn.blackboard.com/">MyAberdeen</a>. During these live
+sessions you will all be working in the main meeting room as you work
+through the associated course exercises. If you have a question, or get
+stuck you’ll be able to get 1:1 support from one of the course
+instructors in a smaller breakout group. More information about this
+setup will be provided during the first session on Monday
+12<sup>th</sup> December 2022.</p>
+<!--
+will be teaching will be held in room FN113 in the Fraser Noble building (building No. 7 on [this map](images/uoa_map.png) on the old Aberdeen campus). For those of you unfamiliar with the Aberdeen campus I have also indicated on the map where you can grab a bite to eat or a caffeine hit!
+-->
 <p> </p>
-<p>2. You want to compare the difference in growth rate between the two
-diets using a two sample t-test. Before you conduct the test, you need
-to assess the normality and equal variance assumptions. Use the function
-<code>shapiro.test()</code> to assess normality of growth rate for each
-diet separately (Hint: use your indexing skills to extract the growth
-rate for each diet <code>GRate[diet=='Natural']</code> first). Use the
-function <code>var.test()</code> to test for equal variance (see
-<code>?var.test</code> for more information or <a
-href="https://intro2r.com/one-and-two-sample-tests.html#one-and-two-sample-tests">Section
-6.1</a> of the book for more details). Are your data normally
-distributed and have equal variances? Note: We don’t really advocate
-using these ‘approaches’ for assessing the normality and equal variance
-assumptions assumptions but include them here as many people will still
-want to use them. A much better way to assess assumptions is to use
-diagnostic plots of the residuals (see Q6 for an example).</p>
+</div>
+<div id="do-i-need-my-own-computer" class="section level4">
+<h4>Do I need my own computer?</h4>
+<!--
+No. We will provide desktop computers for those who do not wish to bring their own laptops to the course. All of the desktops will have both R and RStudio already installed but please bring along a USB flash drive to save your work. If you require a desktop computer then please make sure you have registered for a UoA visitor computing account prior to the start of the course (contact [Izzie Buchanan](People.html) for further details). Having said that, if you have a laptop (Mac or Windows) we encourage you to bring it to the course. Please take a look at the **[Setup<i class="fa fa-cog" aria-hidden="true"></i>](setup.html)** link on the navbar at the top for further instructions on how to set up your laptop prior to the course starting.
+-->
+<p>Yes. As we’ll be running the course online this year you’ll need your
+own computer with internet access. Please take a look at the <strong><a
+href="setup.html">Setup<i class="fa fa-cog" aria-hidden="true"></i></a></strong>
+link on the navbar at the top for further instructions on how to set up
+your computer prior to the course starting. Don’t worry, you don’t need
+a particularly powerful computer to install R and RStudio so anything
+from the last 5 years or so should be fine. What you will need is a
+reasonably stable internet connection to participate in the live
+Blackboard Collaborate sessions. If you think that your internet
+connection may not be up to it then please contact <a
+href="People.html">Izzie</a> to discuss alternatives.</p>
 <p> </p>
-<p>3. Conduct a two sample t-test using the <code>t.test()</code>
-function (<a
-href="https://intro2r.com/one-and-two-sample-tests.html#one-and-two-sample-tests">Section
-6.1</a>of the book). Use the argument <code>var.equal = TRUE</code> to
-perform the t-test assuming equal variances. What is the null hypothesis
-you want to test? Do you reject or fail to reject the null hypothesis?
-What is the value of the t statistic, degrees of freedom and p value?
-How would you summarise these summary statistics in a report?</p>
+</div>
+<div id="why-are-you-not-teaching-us-tidyverse" class="section level4">
+<h4>Why are you not teaching us ‘tidyverse’?</h4>
+<p>We have thought long and hard about whether to teach this course
+using the <a href="https://www.tidyverse.org/"
+target="_blank">‘tidyverse’</a> collection of packages and approaches
+(if you’ve never heard of ‘tidyverse’ before then don’t worry about
+it!). In a perfect world we would have sufficient time to teach you both
+base R and ‘tidyverse’, however we only have 3 days together and this is
+not really enough time to cover both topics in sufficient detail. In the
+end we decided that it was more important that by the end of the course
+you have a good fundamental grasp of base R which will provide you with
+the foundation to go on and learn ‘tidyverse’ approaches in your own
+time (if you want to). Having said that, if you have previous experience
+using ‘tidyverse’ then feel free to complete the course exercises using
+this approach.</p>
 <p> </p>
-<p>4. An alternative (but equivalent) way to compare the mean growth
-rate between diets is to use a linear model. Use the <code>lm()</code>
-function to fit a linear model with <code>GRate</code> as the response
-variable and <code>diet</code> as an explanatory variable (see <a
-href="https://intro2r.com/simple-lm.html#simple_lm">Section 6.3</a> for
-a very brief introduction to linear modelling). Assign
-(<code>&lt;-</code>) the results of the linear model to a variable with
-an appropriate name (i.e. <code>growth.lm</code>).</p>
+</div>
+<div id="i-dont-likewant-to-use-rstudio" class="section level4">
+<h4>I don’t like/want to use RStudio</h4>
+<p>Not a problem. Feel free to use the IDE or script editor of your
+choice. One of the great things about R is that <em>YOU</em> decide how
+you want to use it. See <a
+href="https://intro2r.com/alternatives-to-rstudio.html">Section 1.4</a>
+of our Introduction to R book for some suggestions for alternatives to
+RStudio.</p>
 <p> </p>
-<p>5. Produce an ANOVA table for the fitted model using the
-<code>anova()</code> function i.e. <code>anova(growth.lm)</code>.
-Compare the ANOVA p value to the p value obtained using a t-test. What
-do you notice? What is the value of the F statistics and degrees of
-freedom? How would you summarise these results in a report?</p>
+</div>
+<div id="where-do-i-get-additional-help" class="section level4">
+<h4>Where do I get additional help?</h4>
+<p>It’s inevitable that you will get stuck at some point either during
+the course or beyond. Whilst attending the course please feel free to
+ask plenty of questions (remember, we’ve all been there!). After the
+course, take a look at the <a href="resources.html">Resources</a>
+section for further information on where to get help and how to help
+yourself. There is also an active <a
+href="https://aberdeenstudygroup.github.io/studyGroup/">Aberdeen Study
+Group</a> which you can join for free and you don’t need to be based in
+Aberdeen to participate. The group has regular online R co-working
+sessions and their website hosts a bunch of useful and informative
+tutorials.</p>
 <p> </p>
-<p>6. Assess the normality and equal variance assumptions by plotting
-the residuals of the fitted model (see <a
-href="https://intro2r.com/simple-lm.html#simple_lm">Section 6.3</a> for
-more details). Split the plotting device into 2 rows and 2 columns using
-<code>par(mfrow=c(2,2))</code> so you can fit four plots on a single
-device. Use the <code>plot()</code> function on your fitted model
-(<code>plot(growth.lm)</code>) to plot the graphs. Discuss with an
-instructor how to interpret these plots. What are your conclusions?</p>
-<p> </p>
-<p>7. Download the datafile <em>‘Gigartina.CSV’</em> from the <strong><a
-href="data.html"><i class="fa fa-download"></i> Data</a></strong> link
-and save it to the <code>data</code> directory. Import the dataset into
-R and assign the dataframe an appropriate name. These data were
-collected from a study to examine the change in <code>diameter</code> of
-red algae <a
-href="https://en.wikipedia.org/wiki/Mastocarpus_stellatus"><em>Mastocarpus
-stellatus</em></a> spores grown in three different diatom cultures and a
-control group grown in artificial seawater (<code>diatom.treat</code>
-variable). Use the function <code>str()</code> to examine the dataframe.
-How many replicates are there per diatom treatment? Use an appropriate
-plot to examine whether there are any obvious differences in diameter
-between the treatments.</p>
-<p> </p>
-<p>8. You wish to compare the mean diameter of <em>Metacarpus</em> grown
-in the four treatment groups (<code>ASGM</code>, <code>Sdecl</code>,
-<code>Sexpo</code>, <code>Sstat</code>) using a one-way analysis of
-variance (ANOVA). What is your null hypothesis?</p>
-<p> </p>
-<p>9. We will conduct the ANOVA using the linear model function
-<code>lm()</code> once again. Make sure you know which of the variables
-is your response variable and which is your explanatory variable (ask an
-instructor if in doubt). Fit the linear model and assign the model
-output to a variable with an appropriate name
-(i.e. <code>gigartina.lm</code>).</p>
-<p> </p>
-<p>10. Produce an ANOVA table using the <code>anova()</code> function.
-What is the value of the p value? Do you reject or fail to reject the
-null hypothesis? What is the value of the <em>F</em> statistic and
-degrees of freedom? How would you report these summary statistics in a
-report?</p>
-<p> </p>
-<p>11. Assess the assumptions of normality and equal variance of the
-residuals by producing the residual plots as before. Don’t forget to
-split the plotting device into 2 rows and 2 columns before plotting.
-Discuss with an instructor whether the residuals meet these assumptions.
-Do you accept this model as acceptable?</p>
-<p> </p>
-<p>12. Let’s compare the treatment group means to determine which
-treatment group is different from other treatment groups. In general,
-you should be careful with these types of post-hoc comparisons,
-especially if you have a large number of groups (There are much better
-ways to do this, but that’s for another course!). In this case we only
-have 4 groups, and therefore we will use Tukey’s Honest significant
-difference to perform the comparisons and control for type 1 error rate
-(rejecting a true null hypothesis).</p>
-<p> </p>
-<p>13. We will use the function <code>TukeyHSD()</code> from the
-<code>mosaic</code> package to perform these comparisons (you will need
-to install this package first and then use <code>library(mosaic)</code>
-to make the function available). Which groups are different from each
-other if we use the p-value cutoff (alpha) of p &lt; 0.05?</p>
-<p> </p>
-<p>14. We can also produce a plot of the comparisons to help us
-interpret the table of comparisons. Use the <code>plot()</code> function
-with the <code>TukeyHSD(gigartina.lm)</code>. Ask if you get stuck (or
-Google it!).</p>
-<p> </p>
-<p>15. Download the <em>‘TemoraBR.csv’</em> file from the <strong><a
-href="data.html"><i class="fa fa-download"></i> Data</a></strong> link
-and save it to the <code>data</code> directory. Import the dataset into
-R and as usual assign it to a variable. These data are from an
-experiment that was conducted to investigate the relationship between
-temperature (<code>temp</code>) and the beat rate (Hz)
-<code>beat_rate</code> of the copepod <a
-href="https://en.wikipedia.org/wiki/Temora_longicornis"><em>Temora
-longicornis</em></a> which had been acclimatised at three different
-temperature regimes (<code>acclimitisation_temp</code>). Examine the
-structure of the dataset. How many variables are there? What type of
-variables are they? Which is the response (dependent) variable, and
-which are the explanatory (independent) variables?</p>
-<p> </p>
-<p>16. What type of variable is <code>acclimitisation_temp</code>? Is it
-a factor? Convert <code>acclimitisation_temp</code> to a factor and
-store the result in a new column in your dataframe called
-<code>Facclimitisation_temp</code>. Hint: use the function
-<code>factor()</code>. Use an appropriate plot to visualise these data
-(perhaps a coplot or similar?).</p>
-<p> </p>
-<p>17. We will analyse these data using an Analysis of Covariance
-(ANCOVA) to compare the slopes and the intercepts of the relationship
-between <code>beat_rate</code> and <code>temp</code> for each level of
-<code>Facclimatisation_temp</code>. Take a look at the plot you produced
-in Q16, do you think the relationships are different?</p>
-<p> </p>
-<p>18. As usual we will fit the model using the <code>lm()</code>
-function. You will need to fit the main effects of <code>temp</code> and
-<code>Facclimatisation_temp</code> and the interaction between
-<code>temp</code> and <code>Facclimatisation_temp</code>. You can do
-this using either of the equivalent specifications:</p>
-<p><code>temp + Facclimatisation_temp + temp:Facclimatisation_temp</code>
-or</p>
-<p><code>temp * Facclimatisation_temp</code></p>
-<p> </p>
-<p>19. Produce the summary ANOVA table as usual. Is the interaction
-between <code>temp</code> and <code>Facclimatisation_temp</code>
-significant? What is the interpretation of the interaction term? Should
-we interpret the main effects of <code>temp</code> and
-<code>Facclimatisation_temp</code> as well?</p>
-<p> </p>
-<p>20. Assess the assumptions of normality and equal variance of the
-residuals in the usual way. Do the residuals meet these assumptions?
-Discuss with a instructor.</p>
-<p> </p>
-<p>21. Write a short summary in you R script (don’t forget to comment
-this out with <code>#</code>) describing the interpretation of this
-model. Report the appropriate summary statistics such as <em>F</em>
-values, degrees of freedom and p values.</p>
-<p> </p>
-<p>22. (Optional) refit the model using the square root transformed
-<code>beat_rate</code> as the response variable. Does the interpretation
-of the model change? Do the validation plots of the residuals look
-better?</p>
-<p> </p>
-<p>End of Exercise 5</p>
+</div>
+<div id="what-do-i-do-once-the-course-has-finished"
+class="section level4">
+<h4>What do I do once the course has finished?</h4>
+<p>The only way to get more comfortable using R is to use R! I strongly
+suggest that having completed this course you start using R to
+summarise, manipulate, plot and analyse your own data as soon as
+possible. If you don’t have any data yet, then ask your supervisor,
+friends or family for some (I’m sure they will be delighted!) or follow
+one of the many excellent tutorials available online (see the <a
+href="resources.html">resources</a> page for more information). My
+suggestion to you, is that whilst you are getting to grips with R,
+uninstall any other statistics software you have on your computer and
+only use R. This may seem a little extreme but will hopefully remove the
+temptation to ‘just do it quickly’ in a more familiar environment and
+consequently slow down your learning of R. Believe me, anything you can
+do in your existing statistics software package you can do in R (often
+better and more efficiently).</p>
 </div>
 
 

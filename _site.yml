@@ -6,6 +6,9 @@ navbar:
   title: "QUADstatR"
   icon: fa-home
   left:
+    - text: "FAQ"
+      icon: fa-question
+      href: FAQ.html
     - text: "Setup"
       icon: fa-cog
       href: setup.html
