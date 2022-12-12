@@ -76,7 +76,7 @@ first_five <- weights[c(1, 2, 3, 4, 5)]     # alternative method
 
 \  
 
-7\. We're now going to use the the `c()` function again to create another vector called `height` containing the height (in cm) of the same 10 children: `112, 102, 83, 84, 99, 90, 77, 112, 133, 112`. Use the `summary()` function to summarise these data in the `height` object. Extract the height of the 2nd, 3rd, 9th and 10th child and assign these heights to a variable called `some_child` (take a look at the section [Positional indexes](https://intro2r.com/vectors.html#positional-index) in the R book if you're stuck). We can also extract elements using [Logical indexes](https://intro2r.com/vectors.html#logical-index). Let's extract all the heights of children less than or equal to 99 cm and assign to a variable called `shorter_child`.
+7\. We're now going to use the the `c()` function again to create another vector called `height` containing the height (in cm) of the same 10 children: `112, 102, 83, 84, 99, 90, 77, 112, 133, 112`. Use the `summary()` function to summarise these data in the `height` object. Extract the height of the 2^nd^, 3^rd^, 9^th^ and 10^th^ child and assign these heights to a variable called `some_child` (take a look at the section [Positional indexes](https://intro2r.com/vectors.html#positional-index) in the R book if you're stuck). We can also extract elements using [Logical indexes](https://intro2r.com/vectors.html#logical-index). Let's extract all the heights of children less than or equal to 99 cm and assign to a variable called `shorter_child`.
 
 ```{r Q7, results = 'asis'}
 height <- c(112, 102, 83, 84, 99, 90, 77, 112, 133, 112)
@@ -114,12 +114,12 @@ seq2 <- rev(seq(from = 1, to = 10, by = 0.5))
 
 11\.	Let's go mad! Generate the following sequences. You will need to experiment with the arguments to the `rep()` function to generate these sequences (see [Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) again):
 
-    + 1 2 3 1 2 3 1 2 3
-    + "a" "a" "a" "c" "c" "c" "e" "e" "e" "g" "g" "g"
-    + "a" "c" "e" "g" "a" "c" "e" "g" "a" "c" "e" "g"
-    + 1 1 1 2 2 2 3 3 3 1 1 1 2 2 2 3 3 3
-    + 1 1 1 1 1 2 2 2 2 3 3 3 4 4 5
-    + 4 sevens, 3 twos, 1 eight and 5 ones
+- 1 2 3 1 2 3 1 2 3
+- "a" "a" "a" "c" "c" "c" "e" "e" "e" "g" "g" "g"
+- "a" "c" "e" "g" "a" "c" "e" "g" "a" "c" "e" "g"
+- 1 1 1 2 2 2 3 3 3 1 1 1 2 2 2 3 3 3
+- 1 1 1 1 1 2 2 2 2 3 3 3 4 4 5
+- 7 7 7 7 2 2 2 8 1 1 1 1 1
 
 ```{r Q11}
 rep(1:3, times = 3)
