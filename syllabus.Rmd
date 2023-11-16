@@ -14,13 +14,13 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Friday 9^th^ December 2022
+#### Tuesday 5^th^ December 2023
 
   - 14:00 - 15:00: Online drop-in session for software installation issues (BBcollaborate)
 
 \  
 
-#### Monday 12^th^ December 2022
+#### Wednesday 6^th^ December 2023
 
   - Morning: Introduction to the course, getting to know R and RStudio ([Exercise 1](https://alexd106.github.io/QUADstatR/exercise_1.html))
 
@@ -28,7 +28,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Tuesday 13^th^ December 2022
+#### Thursday 7^th^ December 2023
 
   - Morning: Importing and manipulating dataframes ([Exercise 3](https://alexd106.github.io/QUADstatR/exercise_3.html))
 
@@ -36,8 +36,7 @@ The course will start at 09:30 each morning and finish at 17:00. We will break f
 
 \  
 
-#### Wednesday 14^th^ December 2022
-
+#### Friday 8^th^ December 2023
   - Morning: Simple statistics in R ([Exercise 5](https://alexd106.github.io/QUADstatR/exercise_5.html))
 
   - Afternoon: Basic programming in R (optional) or catchup ([Exercise 6](https://alexd106.github.io/QUADstatR/exercise_6.html))

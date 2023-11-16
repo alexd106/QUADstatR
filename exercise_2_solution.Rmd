@@ -76,7 +76,9 @@ first_five <- weights[c(1, 2, 3, 4, 5)]     # alternative method
 
 \  
 
-7\. We're now going to use the the `c()` function again to create another vector called `height` containing the height (in cm) of the same 10 children: `112, 102, 83, 84, 99, 90, 77, 112, 133, 112`. Use the `summary()` function to summarise these data in the `height` object. Extract the height of the 2^nd^, 3^rd^, 9^th^ and 10^th^ child and assign these heights to a variable called `some_child` (take a look at the section [Positional indexes](https://intro2r.com/vectors.html#positional-index) in the R book if you're stuck). We can also extract elements using [Logical indexes](https://intro2r.com/vectors.html#logical-index). Let's extract all the heights of children less than or equal to 99 cm and assign to a variable called `shorter_child`.
+7\. We're now going to use the the `c()` function again to create another vector called `height` containing the height (in cm) of the same 10 children: `112, 102, 83, 84, 99, 90, 77, 112, 133, 112`. Use the `summary()` function to summarise these data in the `height` object. Extract the height of the 2^nd^, 3^rd^, 9^th^ and 10^th^ child and assign these heights to a variable called `some_child` (take a look at the section [Positional indexes](https://intro2r.com/vectors.html#positional-index) in the R book if you're stuck). 
+
+We can also extract elements using [Logical indexes](https://intro2r.com/vectors.html#logical-index). Let's extract all the heights of children less than or equal to 99 cm and assign to a variable called `shorter_child`.
 
 ```{r Q7, results = 'asis'}
 height <- c(112, 102, 83, 84, 99, 90, 77, 112, 133, 112)
@@ -104,7 +106,7 @@ seq1 <- seq(from = 0, to = 1, by = 0.1)
 ```
 \  
 
-10\.	Next, see if you can figure out how to create a sequence from 10 to 1 in steps of 0.5. Assign this sequence to a variable called `seq2` (Hint: you may find it useful to include the `rev()` function in your code).
+10\.	Next, see if you can figure out how to create a sequence from 10 to 1 in steps of 0.5. Assign this sequence to a variable called `seq2`. Hint: you may find it useful to include the `rev()` function in your code (use the search facility in the Introduction to R book to search for `rev()`).
 
 ```{r Q10}
 seq2 <- rev(seq(from = 1, to = 10, by = 0.5))
@@ -115,8 +117,8 @@ seq2 <- rev(seq(from = 1, to = 10, by = 0.5))
 11\.	Let's go mad! Generate the following sequences. You will need to experiment with the arguments to the `rep()` function to generate these sequences (see [Section 2.3](https://intro2r.com/using-functions-in-r.html#using-functions-in-r) again):
 
 - 1 2 3 1 2 3 1 2 3
-- "a" "a" "a" "c" "c" "c" "e" "e" "e" "g" "g" "g"
-- "a" "c" "e" "g" "a" "c" "e" "g" "a" "c" "e" "g"
+- a a a c c c e e e g g g
+- a c e g a c e g a c e g
 - 1 1 1 2 2 2 3 3 3 1 1 1 2 2 2 3 3 3
 - 1 1 1 1 1 2 2 2 2 3 3 3 4 4 5
 - 7 7 7 7 2 2 2 8 1 1 1 1 1
@@ -168,7 +170,7 @@ weight_rev <- child_name[weight_ord]     # Alfred is heaviest, Louise is lightes
 
 \  
 
-16\. Almost there! In R, missing values are usually represented with an `NA`. Missing data can be tricky to deal with in R (and in statistics more generally) and cause some surprising behaviour when using some functions. Take a look at [Section 2.4.5](https://intro2r.com/vectors.html#na_vals) of the R book for more information about missing values. To explore this a little further let's create a vector called `mydata` with the values `2, 4, 1, 6, 8, 5, NA, 4, 7`. Notice the value of the 7^th^ element of `mydata` is missing. Now use the `mean()` function to calculate the mean of the values in `mydata`. What does R return? Confused? Next, take a look at the help page for the function `mean()`. Can you figure out how to alter your use of the `mean()` function to calculate the mean without this missing value?  
+16\. Almost there! In R, missing values are usually represented with an `NA`. Missing data can be tricky to deal with in R (and in statistics more generally) and cause some surprising behaviour when using some functions. Take a look at [Section 2.4.5](https://intro2r.com/vectors.html#na_vals) of the R book for more information about missing values. To explore this a little further let's create a vector called `mydata` with the values `2, 4, 1, 6, 8, 5, NA, 4, 7`. Notice the value of the 7^th^ element of `mydata` is missing. Now use the `mean()` function to calculate the mean of the values in `mydata`. What does R return? If you're confused b this output take a look at the help page for the function `mean()`. Can you figure out how to alter your use of the `mean()` function to calculate the mean ignoring this missing value?  
 
 ```{r Q16}
 mydata <- c(2, 4, 1, 6, 8, 5, NA, 4, 7)

@@ -11,11 +11,11 @@ output:
 During the course we will be using both R and RStudio. If you're bringing your own laptop (see [FAQ](index.html)) please follow the instructions under **_Core Software_** and **_Get the Data_** headings before you arrive. No worries if you are having problems installing the software, we will run a drop-in session from 14:00 - 15:30 on Monday 2^nd^ December in room FN113 in the [Fraser Noble building](images/uoa_map.png){target="_blank"} (building No. 7 on the map) to troubleshoot installation problems (bring your laptop!). Alternatively you can [email one of the instructors](People.html) prior to the course.      
 -->
 
-During the course we will be using both R and RStudio. Please follow the instructions under **_Core Software_** and **_Get the Data_** headings before starting the course. No worries if you are having problems installing the software, we'll run a drop-in session from 14:00 - 15:00 on Friday 9^th^ December on Blackboard Collaborate to troubleshoot installation problems. Alternatively you can [email one of the instructors](People.html) prior to the course.      
+During the course we will be using both R and RStudio. Please follow the instructions under **_Core Software_** and **_Get the Data_** headings before starting the course. No worries if you are having problems installing the software, we'll run a drop-in session from 14:00 - 15:00 on Tuesday 5^th^ December on Blackboard Collaborate to troubleshoot installation problems. Alternatively you can [email one of the instructors](People.html) prior to the course.      
 \  
 
 ## Core Software
-**Install R.** Install the latest version of R (4.2.2). Download and install R for [Windows](http://cran.r-project.org/bin/windows/base/){target="_blank"},  [Mac](http://cran.r-project.org/bin/macosx/){target="_blank"} (download the latest R-4.x.x.pkg file for your appropriate version of Mac OS) or [linux](https://cran.r-project.org/bin/linux){target="_blank"} (choose your flavour of linux).
+**Install R.** Install the latest version of R (4.3.2). Download and install R for [Windows](http://cran.r-project.org/bin/windows/base/){target="_blank"},  [Mac](http://cran.r-project.org/bin/macosx/){target="_blank"} (download the latest R-4.x.x.pkg file for your appropriate version of Mac OS) or [linux](https://cran.r-project.org/bin/linux){target="_blank"} (choose your flavour of linux).
 
 **Install RStudio.** Download and install [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/){target="_blank"}.
 
