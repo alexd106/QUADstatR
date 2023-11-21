@@ -187,7 +187,7 @@ boxplot(diameter ~ diatom.treat, data = gigartina, xlab = "diatom treatment", yl
 boxplot(diameter ~ diatom.treat, data = gigartina, xlab = "diatom treatment", ylab = expression(paste("diameter", " (",mu,"m)")))
 
 
-## ---- Q8, results = 'asis'----------------------------------------------------------------------------------------------------------------
+## ----Q8, results = 'asis'-----------------------------------------------------------------------------------------------------------------
 # The null hypothesis Ho: there is no difference in mean diameter 
 # of the spores between the different treatment groups
 
