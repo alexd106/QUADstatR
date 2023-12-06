@@ -73,7 +73,7 @@ first_char    # display the value
 ```
 \  
 
-9\. OK, let's leave RStudio for a minute. Using your favourite web browser, navigate to the [R-project website](http://www.r-project.org) and explore links that catch your eye. Make sure you find the R manuals page and the user contributed documents section. Download any manuals that you think you might find useful (some are listed in the course manual) and save them on your computer (or USB drive).
+9\. OK, let's leave RStudio for a minute. Using your favourite web browser, navigate to the [R-project website](http://www.r-project.org) and explore links that catch your eye. Make sure you find the R manuals page and the user contributed documents section. Download any manuals that you think you might find useful (some are listed on the course [page](https://alexd106.github.io/QUADstatR/resources.html)) and save them on your computer (or USB drive).
 
 \  
 

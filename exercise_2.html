@@ -491,11 +491,11 @@ components) that are all of the same data type (see <a
 href="https://intro2r.com/data-structures.html#scal_vecs">Section
 3.2.1</a> for an introduction to vectors). Although technically not
 correct it might be useful to think of a vector as something like a
-single column in a spreadsheet. There are a multitude of ways to create
-vectors in R but you will use the concatenate function <code>c()</code>
-to create a vector called <code>weight</code> containing the weight (in
-kg) of 10 children: <code>69, 62, 57, 59, 59, 64, 56, 66, 67, 66</code>
-(<a
+single column of data in a spreadsheet. There are a multitude of ways to
+create vectors in R but you will use the concatenate function
+<code>c()</code> to create a vector called <code>weight</code>
+containing the weight (in kg) of 10 children:
+<code>69, 62, 57, 59, 59, 64, 56, 66, 67, 66</code> (<a
 href="https://intro2r.com/using-functions-in-r.html#using-functions-in-r">Section
 2.3</a> or watch this <a
 href="https://alexd106.github.io/QUADstatR/howto.html#vec-vid">video</a>
@@ -555,7 +555,7 @@ variable called <code>seq1</code>.</p>
 to 1 in steps of 0.5. Assign this sequence to a variable called
 <code>seq2</code>. Hint: you may find it useful to include the
 <code>rev()</code> function in your code (use the search facility in the
-Introduction to R book to search for <code>rev()</code>).</p>
+Introduction to R book to search for <code>"rev"</code>).</p>
 <p> </p>
 <p>11. Let’s go mad! Generate the following sequences. You will need to
 experiment with the arguments to the <code>rep()</code> function to
@@ -601,7 +601,7 @@ lightest?</p>
 <p> </p>
 <p>16. Almost there! In R, missing values are usually represented with
 an <code>NA</code>. Missing data can be tricky to deal with in R (and in
-statistics more generally) and cause some surprising behaviour when
+statistics more generally) and can cause some surprising behaviour when
 using some functions. Take a look at <a
 href="https://intro2r.com/vectors.html#na_vals">Section 2.4.5</a> of the
 R book for more information about missing values. To explore this a
@@ -609,7 +609,7 @@ little further let’s create a vector called <code>mydata</code> with the
 values <code>2, 4, 1, 6, 8, 5, NA, 4, 7</code>. Notice the value of the
 7<sup>th</sup> element of <code>mydata</code> is missing. Now use the
 <code>mean()</code> function to calculate the mean of the values in
-<code>mydata</code>. What does R return? If you’re confused b this
+<code>mydata</code>. What does R return? If you’re confused by this
 output take a look at the help page for the function
 <code>mean()</code>. Can you figure out how to alter your use of the
 <code>mean()</code> function to calculate the mean ignoring this missing
