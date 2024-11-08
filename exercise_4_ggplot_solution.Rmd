@@ -257,7 +257,7 @@ ggsave('output/gg_xy_weight.png', device = 'png')
 
 \  
 
-10\. When visualising differences in a continuous variable between levels of a factor (categorical variable) then a boxplot is your friend (avoid using bar plots - Google 'bar plots are evil' for more info). Create a boxplot to visualise the differences in DML at each maturity stage (don't forget to use the recoded version of this variable you created in Q4) . Include x and y axes labels in your plot. Make sure you understand the anatomy of a boxplot before moving on - please ask if you're not sure. An alternative to the boxplot is the violin plot. A violin plot is a combination of a boxplot and a [kernel density plot](https://www.statmethods.net/graphs/density.html) and is great at visualising the distribution of a variable. 
+10\. When visualising differences in a continuous variable between levels of a factor (categorical variable) then a boxplot is your friend (avoid using bar plots - Google 'bar plots are evil' for more info). Create a boxplot to visualise the differences in DML at each maturity stage (don't forget to use the recoded version of this variable you created in Q4) . Include x and y axes labels in your plot. Make sure you understand the anatomy of a boxplot before moving on - please ask if you're not sure. An alternative to the boxplot is the violin plot. A violin plot is a combination of a boxplot and a [kernel density plot](https://www.r-bloggers.com/2023/08/kernel-density-plots-in-r/) and is great at visualising the distribution of a variable. 
 
 ```{r Q10, tidy = TRUE}
 # note: Fmaturity is the recoded maturity.stage variable cerated in Q4

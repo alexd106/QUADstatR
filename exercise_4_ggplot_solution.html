@@ -891,8 +891,9 @@ created in Q4) . Include x and y axes labels in your plot. Make sure you
 understand the anatomy of a boxplot before moving on - please ask if
 you’re not sure. An alternative to the boxplot is the violin plot. A
 violin plot is a combination of a boxplot and a <a
-href="https://www.statmethods.net/graphs/density.html">kernel density
-plot</a> and is great at visualising the distribution of a variable.</p>
+href="https://www.r-bloggers.com/2023/08/kernel-density-plots-in-r/">kernel
+density plot</a> and is great at visualising the distribution of a
+variable.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># note: Fmaturity is the recoded maturity.stage variable cerated in Q4</span></span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Fmaturity, <span class="at">y =</span> DML)) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Maturity stage&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Dorsal mantel length&quot;</span>)</span>
