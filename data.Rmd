@@ -11,37 +11,53 @@ knitr::opts_chunk$set(message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE)
 suppressPackageStartupMessages(library(dplyr))
 ```
 
-```{r zipdir, include=FALSE}
-if (!file.exists("data/all_data.zip")) system("rm data/all_data.zip ; zip -r data/all_data.zip data -x '*.html' -x '*.DS_Store'")
+```{r zipdir2, include=FALSE, eval=FALSE}
+if (file.exists("data/all_data.zip")){
+  file.remove("data/all_data.zip")
+}
+flist <- list.files('data')
+utils::zip(zipfile = 'data/all_data', files = paste0('data/', flist), extras = c("-x '*.DS_Store'", "-x '*.zip'"))
 ```
 
-\  
 
+\  
+<!--
 **Option 1: Download all the data at once.** 
 
-- Create a new RStudio project for this course (call it intro_2_r if your imagination fails you!). If you're not sure how to create a new Project then see [Section 1.6](https://intro2r.com/rsprojs.html) of our Introduction to R book or watch [this short video](https://alexd106.github.io/QUADstatR/howto.html#rstudio_proj-vid).
+- Create a new RStudio project for this course (call it intro2r if your imagination fails you!). If you're not sure how to create a new Project then see [Section 1.6](https://intro2r.com/rsprojs.html) of our Introduction to R book or watch [this short video](https://alexd106.github.io/PGR-R/howto.html#rstudio_proj-vid).
 
 - Once you're working in your RStudio project create a new directory in your Project directory called `data` (all lowercase). You can easily create this new directory by clicking on the 'New Folder' button in the 'Files' tab in RStudio (see [Section 1.8](https://intro2r.com/dir-struct.html) of our Introduction to R book for a set-by-step guide how to do this). 
 
-- Download and extract **[this zip file <i class="fa fa-file-archive-o" aria-hidden="true"></i>](data/all_data.zip)** `r paste0("(", round(file.info("data/all_data.zip")$size/1e6, 2), " Mb)")` with all the data for the entire workshop. This may include additional datasets that we won't use. You will need to uncompress this zip file using your favourite software (most operating systems now have at least one built-in (un)compression tool) and save in your newly created `data` folder. 
+- Download and extract **[this zip file <i class="fa fa-file-archive-o" aria-hidden="true"></i>](data/all_data.zip)** `r paste0("(", round(file.info("data/all_data.zip")$size/1e6, 2), " Mb)")` with all the data for the entire workshop. This may include additional datasets that we won't use. You will need to uncompress this zip file using your favourite software (most operating systems now have at least one built-in (un)compression tool). 
 
 \  
 
 **Option 2: Download individual datasets as needed.** 
 
-- Create a new RStudio project for this course (call it intro_2_r if your imagination fails you!). If you're not sure how to create a new Project then see [Section 1.6](https://intro2r.com/rsprojs.html) of our Introduction to R book or watch [this short video](https://alexd106.github.io/QUADstatR/howto.html#rstudio_proj-vid).
+- Create a new RStudio project for this course (call it intro2r if your imagination fails you!). If you're not sure how to create a new Project then see [Section 1.6](https://intro2r.com/rsprojs.html) of our Introduction to R book or watch [this short video](https://alexd106.github.io/PGR-R/howto.html#rstudio_proj-vid).
 
 - Once you're working in your RStudio project create a new directory in your Project directory called `data` (all lowercase). You can easily create this new directory by clicking on the 'New Folder' button in the 'Files' tab in RStudio (see [Section 1.8](https://intro2r.com/dir-struct.html) of our Introduction to R book for a set-by-step guide how to do this).  
 
-- Download individual data files as needed, saving them to the new `data` folder you just made. Right click on the data file link below and select _Save link as..._ (or similar) to save to the desired location.
+- Download individual data files as needed, saving them to the new `intro2r/data` folder you just made. Right click on the data file link below and select _Save link as..._ (or similar) to save to the desired location.
+-->
+
+**Download individual datasets as needed.** 
+
+- Create a new RStudio project for this course (call it 'quadrat_R' if your imagination fails you!). If you're not sure how to create a new Project then see [Section 1.6](https://intro2r.com/rsprojs.html) of our Introduction to R book or watch [this short video](https://alexd106.github.io/QUADstatR/howto.html#rstudio_proj-vid).
+
+- Once you're working in your RStudio project create a new directory in your Project directory called `data` (all lowercase). You can easily create this new directory by clicking on the 'New Folder' button in the 'Files' tab in RStudio (see [Section 1.8](https://intro2r.com/dir_struct.html) of our Introduction to R book for a set-by-step guide how to do this).  
+
+- Download individual data files as needed, saving them to the new `data` folder you just made. Right click on the data file link below and select _Save link as..._ (or similar) to save to the desired location. Note, we will not be using all of these data files for this course!
   
   
 ```{r, results='asis'}
 dir <- "data/"
 list.files(dir) %>%
   sort %>% 
-  grep("\\.html$ | *.zip", ., value=TRUE, invert=TRUE) %>% 
+  # grep("\\.html$|*.zip", ., value = TRUE, invert = TRUE) %>% 
+  grep("(\\.html$|loyn.txt)", ., value = TRUE, invert = TRUE) %>% 
   paste0("    + [", ., "](", paste0(dir, .), ")") %>% 
-  cat(sep="\n")
+  cat(sep = "\n")
 ```
+
 
