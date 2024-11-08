@@ -13,7 +13,7 @@
 
 <title>Exercise Solutions</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -64,7 +64,7 @@
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -75,7 +75,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -570,18 +570,9 @@ class="section level2">
 <p> </p>
 <p>Alternative (optional) solutions to Exercise 4 for those who use (or
 are interested in using) the <code>ggplot</code> approach to plotting
-data. See <a href="https://intro2r.com/graphics-r.html">Chapter 5</a> of
+data. See <a href="https://intro2r.com/graphics_r.html">Chapter 5</a> of
 the Introduction to R book for more information about how to use
 <code>ggplot</code>.</p>
-<p> </p>
-<p>In this exercise you’ll practice using some of R’s plotting functions
-to help you easily produce informative and useful plots of your data.
-You will also have the opportunity to practice customising plots to get
-them to look how you want them. Please read (or refer back to) <a
-href="https://intro2r.com/graphics-base-r.html">Chapter 4</a> of the R
-book to help you complete the questions in this exercise. Click on the
-‘code’ button to the right of each question to reveal the solutions code
-(but try to find a solution first!).</p>
 <p> </p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># make ggplot2, gridExtra and GGally packages available</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># Note: you may need to install these packages first</span></span>
@@ -732,76 +723,79 @@ stage and month (aka a contingency table).</p>
 <span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a><span class="co">#       5                18 21 23 16 23  3  0  0  0  0  0  0</span></span></code></pre></div>
 <p> </p>
 <p>6. The humble cleveland dotplot is a great way of identifying if you
-have potential outliers in continuous variables. Create dotplots (using
-the <code>dotchart()</code> function) for the following variables;
-<code>DML</code>, <code>weight</code>, <code>nid.length</code> and
-<code>ovary.weight</code>. Do these variables contain any unusually
-large or small observations? Don’t forget, if you prefer to create a
-single figure with all 4 plots you can always split your plotting device
-into 2 rows and 2 columns. Use the <code>pdf()</code> function to save a
-pdf version of your plot(s) in your <code>output</code> directory you
-created in Exercise 1.</p>
+have potential outliers in continuous variables (See <a
+href="https://intro2r.com/simple-base-r-plots.html#dotcharts">Section
+4.2.4</a>. Create dotplots (using the <code>dotchart()</code> function)
+for the following variables; <code>DML</code>, <code>weight</code>,
+<code>nid.length</code> and <code>ovary.weight</code>. Do these
+variables contain any unusually large or small observations? Don’t
+forget, if you prefer to create a single figure with all 4 plots you can
+always split your plotting device into 2 rows and 2 columns (see <a
+href="https://intro2r.com/mult-graphs.html#mult_graphs">Section 4.4</a>
+of the book). Use the <code>pdf()</code> function to save a pdf version
+of your plot(s) in your <code>output</code> directory you created in
+Exercise 1 (see <a
+href="https://intro2r.com/export-plots.html#export_plots">Section
+4.5</a> of the book to see how the <code>pdf()</code> function works). I
+have also included some alternative code in the <a
+href="exercise_4_solution.html">solutions for this exercise</a> using
+the <code>dotplot()</code> function from the <code>lattice</code>
+package.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span> </span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> DML, <span class="at">y =</span> <span class="fu">as.numeric</span>(<span class="fu">rownames</span>(squid)))) <span class="sc">+</span></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>p1</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> <span class="fu">as.numeric</span>(<span class="fu">rownames</span>(squid)))) <span class="sc">+</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>) </span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>p2</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> nid.length, <span class="at">y =</span> <span class="fu">as.numeric</span>(<span class="fu">rownames</span>(squid)))) <span class="sc">+</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>p3</span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> ovary.weight, <span class="at">y =</span> <span class="fu">as.numeric</span>(<span class="fu">rownames</span>(squid)))) <span class="sc">+</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>p4</span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co"># arrange all 4 plots in a single</span></span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co"># graphics device</span></span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a></span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a>pall <span class="ot">&lt;-</span> <span class="fu">grid.arrange</span>(p1, p2, p3, p4, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a>pall</span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co"># save the plot </span></span>
-<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;workshop/figures/gg_dotplot.pdf&#39;</span>, <span class="at">plot =</span> pall, <span class="at">device =</span> <span class="st">&#39;pdf&#39;</span>)</span></code></pre></div>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> <span class="fu">as.numeric</span>(<span class="fu">rownames</span>(squid)))) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>) </span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>p2</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> nid.length, <span class="at">y =</span> <span class="fu">as.numeric</span>(<span class="fu">rownames</span>(squid)))) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>p3</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> ovary.weight, <span class="at">y =</span> <span class="fu">as.numeric</span>(<span class="fu">rownames</span>(squid)))) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>p4</span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co"># arrange all 4 plots in a single</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co"># graphics device</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>pall <span class="ot">&lt;-</span> <span class="fu">grid.arrange</span>(p1, p2, p3, p4, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a>pall</span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co"># save the plot </span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;workshop/figures/gg_dotplot.pdf&#39;</span>, <span class="at">plot =</span> pall, <span class="at">device =</span> <span class="st">&#39;pdf&#39;</span>)</span></code></pre></div>
 <p> </p>
 <p>7. It looks like the variable <code>nid.length</code> contains an
 unusually large value. Actually, this value is biologically implausible
 and clearly an error. The researchers were asked to go back and check
 their field notebooks and sure enough they discover a typo. It looks
 like a tired researcher accidentally inserted a zero by mistake when
-transcribing these data. We can clearly see this value is over 400 so we
-can use the <code>which()</code> function to identify which observation
-this is <code>which(squid$nid.length &gt; 400)</code>. It looks like
-this is the 11<sup>th</sup> observation of the
-<code>squid$nid.length</code> variable. Use your skill with the square
-brackets <code>[ ]</code> to first confirm the this is the correct value
-(you should get 430.2) and then change this value to 43.2. Now redo the
-dotchart to visualise your correction. Caution: You can only do this
-because you have confirmed that this is an transcribing error. You
-should <strong>not</strong> remove or change values in your data just
-because you feel like it or they look ‘unusual’. This is scientific
-fraud! Also, the advantage of making this change in your R script rather
-than in Excel is that you now have a permanent record of the change you
-made and can state a clear reason for the change.</p>
+transcribing these data (mistakes in data are very common and why we
+<strong>always</strong> explore, check and validate any data we are
+working on). We can clearly see this value is over 400 so we can use the
+<code>which()</code> function to identify which observation this is
+<code>which(squid$nid.length &gt; 400)</code>. It looks like this is the
+11<sup>th</sup> observation of the <code>squid$nid.length</code>
+variable. Use your skill with the square brackets <code>[ ]</code> to
+first confirm the this is the correct value (you should get 430.2) and
+then change this value to 43.2. Now redo the dotchart to visualise your
+correction. Caution: You can only do this because you have confirmed
+that this is an transcribing error. You should <strong>not</strong>
+remove or change values in your data just because you feel like it or
+they look ‘unusual’. This is scientific fraud! Also, the advantage of
+making this change in your R script rather than in Excel is that you now
+have a permanent record of the change you made and can state a clear
+reason for the change.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">which</span>(squid<span class="sc">$</span>nid.length <span class="sc">&gt;</span> <span class="dv">400</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># [1] 11</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>squid<span class="sc">$</span>nid.length[<span class="dv">11</span>]</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co"># [1] 430.2</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>squid<span class="sc">$</span>nid.length[<span class="dv">11</span>] <span class="ot">&lt;-</span> <span class="fl">43.2</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>squid<span class="sc">$</span>nid.length[<span class="dv">11</span>]</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co"># [1] 43.2</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> nid.length, <span class="at">y =</span> <span class="fu">as.numeric</span>(<span class="fu">rownames</span>(squid)))) <span class="sc">+</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>squid<span class="sc">$</span>nid.length[<span class="dv">11</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># [1] 430.2</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>squid<span class="sc">$</span>nid.length[<span class="dv">11</span>] <span class="ot">&lt;-</span> <span class="fl">43.2</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>squid<span class="sc">$</span>nid.length[<span class="dv">11</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co"># [1] 43.2</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> nid.length, <span class="at">y =</span> <span class="fu">as.numeric</span>(<span class="fu">rownames</span>(squid)))) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p> </p>
 <p>8. When exploring your data it is often useful to visualise the
 distribution of continuous variables. Create histograms for the
@@ -819,37 +813,33 @@ shape of the distribution changes (see the course manual for further
 details of how to change the breaks).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(DML))</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(weight))</span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(weight))</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(eviscerate.weight))</span>
 <span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(eviscerate.weight))</span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(ovary.weight)) </span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co"># experimenting with different breaks</span></span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>bp1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(DML), <span class="at">bins =</span> <span class="dv">20</span>)</span>
-<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>bp1</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(ovary.weight)) </span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co"># experimenting with different breaks</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>bp1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(DML), <span class="at">bins =</span> <span class="dv">20</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>bp1</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>bp2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(DML), <span class="at">bins =</span> <span class="dv">10</span>) </span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>bp2</span>
 <span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>bp2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(DML), <span class="at">bins =</span> <span class="dv">10</span>) </span>
-<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a>bp2</span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>bp3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(DML), <span class="at">bins =</span> <span class="dv">5</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a>bp3</span>
 <span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a>bp3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(DML), <span class="at">bins =</span> <span class="dv">5</span>)</span>
-<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a>bp3</span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a>bp4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(DML), <span class="at">bins =</span> <span class="dv">2</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a>bp4</span>
 <span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a>bp4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(DML), <span class="at">bins =</span> <span class="dv">2</span>)</span>
-<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a>bp4</span>
-<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a></span>
-<span id="cb6-30"><a href="#cb6-30" tabindex="-1"></a>bpall <span class="ot">&lt;-</span> <span class="fu">grid.arrange</span>(bp1, bp2, bp3, bp4, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
-<span id="cb6-31"><a href="#cb6-31" tabindex="-1"></a></span>
-<span id="cb6-32"><a href="#cb6-32" tabindex="-1"></a><span class="co"># save the plot to file</span></span>
-<span id="cb6-33"><a href="#cb6-33" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;workshop/figures/gg_hist.pdf&#39;</span>, <span class="at">plot =</span> bpall, <span class="at">device =</span> <span class="st">&#39;pdf&#39;</span>)</span></code></pre></div>
+<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a>bpall <span class="ot">&lt;-</span> <span class="fu">grid.arrange</span>(bp1, bp2, bp3, bp4, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a><span class="co"># save the plot to file</span></span>
+<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;workshop/figures/gg_hist.pdf&#39;</span>, <span class="at">plot =</span> bpall, <span class="at">device =</span> <span class="st">&#39;pdf&#39;</span>)</span></code></pre></div>
 <p> </p>
 <p>9. Scatterplots are great for visualising relationships between two
 continuous variables. Plot the relationship between <code>DML</code> on
@@ -879,19 +869,18 @@ for a change!).</p>
 <span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
 <span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> DML, <span class="at">y =</span> weight.log)) <span class="sc">+</span></span>
 <span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> DML, <span class="at">y =</span> weight.sqrt)) <span class="sc">+</span></span>
-<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a></span>
-<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co"># the square root transformation looks</span></span>
-<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co"># most appropriate</span></span>
-<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="co"># save plot as jpeg</span></span>
-<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;output/gg_xy_weight.jpeg&#39;</span>, <span class="at">device =</span> <span class="st">&#39;jpeg&#39;</span>)</span>
-<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a></span>
-<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a><span class="co"># save plot as png</span></span>
-<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;output/gg_xy_weight.png&#39;</span>, <span class="at">device =</span> <span class="st">&#39;png&#39;</span>)</span></code></pre></div>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> DML, <span class="at">y =</span> weight.sqrt)) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co"># the square root transformation looks</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co"># most appropriate</span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="co"># save plot as jpeg</span></span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;output/gg_xy_weight.jpeg&#39;</span>, <span class="at">device =</span> <span class="st">&#39;jpeg&#39;</span>)</span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a><span class="co"># save plot as png</span></span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;output/gg_xy_weight.png&#39;</span>, <span class="at">device =</span> <span class="st">&#39;png&#39;</span>)</span></code></pre></div>
 <p> </p>
 <p>10. When visualising differences in a continuous variable between
 levels of a factor (categorical variable) then a boxplot is your friend
@@ -905,8 +894,8 @@ violin plot is a combination of a boxplot and a <a
 href="https://www.statmethods.net/graphs/density.html">kernel density
 plot</a> and is great at visualising the distribution of a variable.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># note: Fmaturity is the recoded maturity.stage variable cerated in Q4</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Fmaturity, <span class="at">y =</span> DML)) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Maturity stage&quot;</span>) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;Dorsal mantel length&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Fmaturity, <span class="at">y =</span> DML)) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Maturity stage&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Dorsal mantel length&quot;</span>)</span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
 <span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co"># violin plot</span></span>
 <span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span> <span class="fu">geom_violin</span>(<span class="fu">aes</span>(<span class="at">x =</span> Fmaturity, <span class="at">y =</span> DML))</span></code></pre></div>
@@ -937,8 +926,7 @@ using <code>ggplot</code> then you will need to install the package
 <code>ggpairs()</code> function. Don’t forget to make the package
 available with the <code>library()</code> function.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">ggpairs</span>(squid[, <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>)])</span></code></pre></div>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">ggpairs</span>(squid[, <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>)])</span></code></pre></div>
 <p> </p>
 <p>13. Almost every aspect of the figures you create in R is
 customisable. Learning how to get your plot looking just right is not
@@ -957,17 +945,20 @@ Format the graph further to make it suitable for inclusion into your
 paper/thesis (i.e. add axes labels, change the axes scales etc).</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># square root transform ovary weight</span></span>
 <span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>squid<span class="sc">$</span>ovary.weight.sqrt <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(squid<span class="sc">$</span>ovary.weight)</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> DML, <span class="at">y =</span> ovary.weight.sqrt, <span class="at">colour =</span> Fmaturity), <span class="at">alpha =</span> <span class="fl">0.8</span>,</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;deepskyblue3&quot;</span>, <span class="st">&quot;darkolivegreen3&quot;</span>, <span class="st">&quot;coral3&quot;</span>, <span class="st">&quot;lemonchiffon3&quot;</span>,</span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>    <span class="st">&quot;darkorchid3&quot;</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;stage 1&quot;</span>, <span class="st">&quot;stage 2&quot;</span>, <span class="st">&quot;stage 3&quot;</span>, <span class="st">&quot;stage 4&quot;</span>, <span class="st">&quot;stage 5&quot;</span>)) <span class="sc">+</span> <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">colour =</span> <span class="st">&quot;&quot;</span>, <span class="at">x =</span> <span class="st">&quot;DML (mm)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co"># OR</span></span>
-<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> DML, <span class="at">y =</span> ovary.weight.sqrt, <span class="at">colour =</span> Fmaturity), <span class="at">alpha =</span> <span class="fl">0.8</span>,</span>
-<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">colour =</span> <span class="st">&quot;&quot;</span>, <span class="at">x =</span> <span class="st">&quot;DML (mm)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>)</span>
-<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="fu">browseURL</span>(<span class="st">&quot;https://giphy.com/gifs/RyXVu4ZW454IM/fullscreen&quot;</span>, <span class="at">browser =</span> <span class="fu">getOption</span>(<span class="st">&quot;browser&quot;</span>), <span class="at">encodeIfNeeded =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> DML, <span class="at">y =</span> ovary.weight.sqrt, <span class="at">colour =</span> Fmaturity),</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;deepskyblue3&quot;</span>, <span class="st">&quot;darkolivegreen3&quot;</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>    <span class="st">&quot;coral3&quot;</span>, <span class="st">&quot;lemonchiffon3&quot;</span>, <span class="st">&quot;darkorchid3&quot;</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;stage 1&quot;</span>, <span class="st">&quot;stage 2&quot;</span>, <span class="st">&quot;stage 3&quot;</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>    <span class="st">&quot;stage 4&quot;</span>, <span class="st">&quot;stage 5&quot;</span>)) <span class="sc">+</span> <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">colour =</span> <span class="st">&quot;&quot;</span>, <span class="at">x =</span> <span class="st">&quot;DML (mm)&quot;</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="co"># OR</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> squid) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> DML, <span class="at">y =</span> ovary.weight.sqrt, <span class="at">colour =</span> Fmaturity),</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">colour =</span> <span class="st">&quot;&quot;</span>, <span class="at">x =</span> <span class="st">&quot;DML (mm)&quot;</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a><span class="fu">browseURL</span>(<span class="st">&quot;https://giphy.com/gifs/RyXVu4ZW454IM/fullscreen&quot;</span>, <span class="at">browser =</span> <span class="fu">getOption</span>(<span class="st">&quot;browser&quot;</span>),</span>
+<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>    <span class="at">encodeIfNeeded =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p> </p>
 <p><sup>1</sup> Smith JM et al (2005) Seasonal patterns of investment in
 reproductive and somatic tissues in the squid <em>Loligo forbesi</em>,

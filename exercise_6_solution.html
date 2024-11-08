@@ -11,9 +11,9 @@
 
 
 
-<title>Exercise Solutions</title>
+<title>Exercises</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -64,7 +64,7 @@
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -75,7 +75,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -558,7 +558,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Exercise Solutions</h1>
+<h1 class="title toc-ignore">Exercises</h1>
 
 </div>
 
@@ -568,9 +568,7 @@ $(document).ready(function () {
 <h2>Exercise 6: Basic programming in R</h2>
 <p> </p>
 <p>Read <a href="https://intro2r.com/prog_r.html">Chapter 7</a> to help
-you complete the questions in this exercise. Click on the ‘code’ button
-to the right of each question to reveal the solutions code (but try to
-find a solution first!).</p>
+you complete the questions in this exercise.</p>
 <p> </p>
 <p>1. Create a function to calculate the area of a circle. Test the
 function by finding the area of a circle with a diameter of 3.4 cm. Can
@@ -697,8 +695,8 @@ for and <em>K</em> which we will initially set to 100 by default.</p>
 <span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>        N[i <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> N[i] <span class="sc">*</span> <span class="fu">exp</span>(r <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> N[i]<span class="sc">/</span>K))</span>
 <span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>    }</span>
 <span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>    Time <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>time  <span class="co"># creates vector for x axis</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="fu">plot</span>(Time, N, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, time), <span class="at">xlab =</span> <span class="st">&quot;Time&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Population size (N)&quot;</span>, <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;r =&quot;</span>,</span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>        r, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>))  <span class="co"># plots     output</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="fu">plot</span>(Time, N, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, time), <span class="at">xlab =</span> <span class="st">&quot;Time&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Population size (N)&quot;</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>        <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;r =&quot;</span>, r, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>))  <span class="co"># plots     output</span></span>
 <span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>}</span>
 <span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a></span>
 <span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co"># To run play around with the different parameters, especially r</span></span>

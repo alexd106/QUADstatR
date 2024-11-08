@@ -13,7 +13,7 @@
 
 <title>Exercises</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -30,6 +30,7 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -215,6 +216,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -434,6 +438,14 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">Exercises</h1>
@@ -445,7 +457,7 @@ $(document).ready(function () {
 <div id="exercise-2-basic-r-operations" class="section level2">
 <h2>Exercise 2 : Basic R operations</h2>
 <p> </p>
-<p>Read <a href="https://intro2r.com/basics-r.html">Chapter 2</a> to
+<p>Read <a href="https://intro2r.com/basics_r.html">Chapter 2</a> to
 help you complete the questions in this exercise.</p>
 <p> </p>
 <p>1. Open up your RStudio Project from Exercise 1 and either create a
@@ -472,8 +484,8 @@ href="https://intro2r.com/objects-in-r.html#objects-in-r">Section
 href="https://alexd106.github.io/QUADstatR/howto.html#objs-vid">video</a>.
 Google is your friend if you can’t remember the formula to calculate the
 area of a circle! Also, remember that R already knows about
-<code>pi</code>. Don’t worry if you’re stumped and feel free to ask one
-of the instructors for guidance.</p>
+<code>pi</code>. Don’t worry if you’re stumped, feel free to ask one of
+the instructors for guidance.</p>
 <p> </p>
 <p>4. Now for something a little more tricky. Calculate the cube root of
 14 x 0.51. You might need to think creatively for a solution (hint:
@@ -520,14 +532,12 @@ create another vector called <code>height</code> containing the height
 (in cm) of the same 10 children:
 <code>112, 102, 83, 84, 99, 90, 77, 112, 133, 112</code>. Use the
 <code>summary()</code> function to summarise these data in the
-<code>height</code> object. Extract the height of the 2<sup>nd</sup>,
-3<sup>rd</sup>, 9<sup>th</sup> and 10<sup>th</sup> child and assign
-these heights to a variable called <code>some_child</code> (take a look
-at the section <a
+<code>height</code> object. Extract the height of the 2nd, 3rd, 9th and
+10th child and assign these heights to a variable called
+<code>some_child</code> (take a look at the section <a
 href="https://intro2r.com/vectors.html#positional-index">Positional
-indexes</a> in the R book if you’re stuck).</p>
-<p>We can also extract elements using <a
-href="https://intro2r.com/vectors.html#logical-index">Logical
+indexes</a> in the R book if you’re stuck). We can also extract elements
+using <a href="https://intro2r.com/vectors.html#logical-index">Logical
 indexes</a>. Let’s extract all the heights of children less than or
 equal to 99 cm and assign to a variable called
 <code>shorter_child</code>.</p>
@@ -535,10 +545,13 @@ equal to 99 cm and assign to a variable called
 <p>8. Now you can use the information in your <code>weight</code> and
 <code>height</code> variables to calculate the body mass index (BMI) for
 each child. The BMI is calculated as weight (in kg) divided by the
-square of the height (in meters). Store the results of this calculation
-in a variable called <code>bmi</code>. Note: you don’t need to do this
-calculation for each child individually, you can use both vectors in the
-BMI equation – this is called vectorisation (see <a
+square of the height (<strong>in meters</strong>).</p>
+<p><span class="math display">\[bmi_i = \frac{weight_i}
+{height_i^2}\]</span></p>
+<p>Store the results of this calculation in a variable called
+<code>bmi</code>. Note: you don’t need to do this calculation for each
+child individually, you can use both vectors in the BMI equation – this
+is called vectorisation (see <a
 href="https://intro2r.com/vectors.html#vectorisation">Section 2.4.4</a>
 of the Introduction to R book).</p>
 <p> </p>
@@ -555,13 +568,13 @@ variable called <code>seq1</code>.</p>
 to 1 in steps of 0.5. Assign this sequence to a variable called
 <code>seq2</code>. Hint: you may find it useful to include the
 <code>rev()</code> function in your code (use the search facility in the
-Introduction to R book to search for <code>"rev"</code>).</p>
+Introduction to R book to search for <code>'rev'</code>).</p>
 <p> </p>
-<p>11. Let’s go mad! Generate the following sequences. You will need to
-experiment with the arguments to the <code>rep()</code> function to
-generate these sequences (see <a
+<p>11. Let’s go sequence crazy! Generate the following sequences. You
+will need to experiment with the arguments of the <code>rep()</code>
+function to generate these sequences (see <a
 href="https://intro2r.com/using-functions-in-r.html#using-functions-in-r">Section
-2.3</a> again):</p>
+2.3</a> for some clues):</p>
 <ul>
 <li>1 2 3 1 2 3 1 2 3</li>
 <li>a a a c c c e e e g g g</li>
@@ -571,16 +584,16 @@ href="https://intro2r.com/using-functions-in-r.html#using-functions-in-r">Sectio
 <li>7 7 7 7 2 2 2 8 1 1 1 1 1</li>
 </ul>
 <p> </p>
-<p>12. Ok, back to the variable <code>height</code> you created in Q7.
-Let’s sort the values of <code>height</code> into ascending order
-(shortest to tallest) and assign the sorted vector to a new variable
-called <code>height_sorted</code>. Take a look at <a
+<p>12. OK, back to the variable <code>height</code> you created in Q7.
+Sort the values of <code>height</code> into ascending order (shortest to
+tallest) and assign the sorted vector to a new variable called
+<code>height_sorted</code>. Take a look at <a
 href="https://intro2r.com/vectors.html#vec_ord">Section 2.4.3</a> in the
 R book to see how to do this. Now sort all heights into descending order
 and assign the new vector a name of your choice.</p>
 <p> </p>
 <p>13. Let’s give the children some names. Create a new vector called
-<code>child_name</code> with the following names of the 10 children:
+<code>child_names</code> with the following names of the 10 children:
 <code>"Alfred", "Barbara", "James", "Jane", "John", "Judy", "Louise", "Mary", "Ronald", "William"</code>.</p>
 <p> </p>
 <p>14. A really useful (and common) task is to order the values of one
@@ -601,19 +614,19 @@ lightest?</p>
 <p> </p>
 <p>16. Almost there! In R, missing values are usually represented with
 an <code>NA</code>. Missing data can be tricky to deal with in R (and in
-statistics more generally) and can cause some surprising behaviour when
+statistics more generally) and cause some surprising behaviour when
 using some functions. Take a look at <a
 href="https://intro2r.com/vectors.html#na_vals">Section 2.4.5</a> of the
 R book for more information about missing values. To explore this a
 little further let’s create a vector called <code>mydata</code> with the
 values <code>2, 4, 1, 6, 8, 5, NA, 4, 7</code>. Notice the value of the
-7<sup>th</sup> element of <code>mydata</code> is missing. Now use the
-<code>mean()</code> function to calculate the mean of the values in
-<code>mydata</code>. What does R return? If you’re confused by this
-output take a look at the help page for the function
-<code>mean()</code>. Can you figure out how to alter your use of the
-<code>mean()</code> function to calculate the mean ignoring this missing
-value?</p>
+7<sup>th</sup> element of <code>mydata</code> is missing and represented
+with an <code>NA</code>. Now use the <code>mean()</code> function to
+calculate the mean of the values in <code>mydata</code>. What does R
+return? If you’re confused by this output take a look at the help page
+for the function <code>mean()</code>. Can you figure out how to alter
+your use of the <code>mean()</code> function to calculate the mean
+ignoring this missing value?</p>
 <p> </p>
 <p>17. Finally, list all variables in your workspace that you have
 created in this exercise. Remove the variable <code>seq1</code> from the
@@ -655,6 +668,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
