@@ -11,11 +11,11 @@ output:
 During the course we will be using both R and RStudio. If you're bringing your own laptop (see [FAQ](index.html)) please follow the instructions under **_Core Software_** and **_Get the Data_** headings before you arrive. No worries if you are having problems installing the software, we will run a drop-in session from 14:00 - 15:30 on Monday 2^nd^ December in room FN113 in the [Fraser Noble building](images/uoa_map.png){target="_blank"} (building No. 7 on the map) to troubleshoot installation problems (bring your laptop!). Alternatively you can [email one of the instructors](People.html) prior to the course.      
 -->
 
-During the course we will be using both R and RStudio. Please follow the instructions under **_Core Software_** and **_Get the Data_** headings before starting the course. No worries if you are having problems installing the software, we'll run a drop-in session from 14:00 - 15:00 on Tuesday 5^th^ December on Blackboard Collaborate to troubleshoot installation problems. Alternatively you can [email one of the instructors](People.html) prior to the course.      
+During the course we will be using both R and RStudio. Please follow the instructions under **_Core Software_** and **_Get the Data_** headings before starting the course. No worries if you are having problems installing the software, we'll run a drop-in session from 14:00 - 15:00 on Tuesday 3^rd^ December on Blackboard Collaborate to troubleshoot installation problems. Alternatively you can [email one of the instructors](People.html) prior to the course.      
 \  
 
 ## Core Software
-**Install R.** Install the latest version of R (4.3.2). Download and install R for [Windows](http://cran.r-project.org/bin/windows/base/){target="_blank"},  [Mac](http://cran.r-project.org/bin/macosx/){target="_blank"} (download the latest R-4.x.x.pkg file for your appropriate version of Mac OS) or [linux](https://cran.r-project.org/bin/linux){target="_blank"} (choose your flavour of linux).
+**Install R.** Install the latest version of R (4.4.0). Download and install R for [Windows](http://cran.r-project.org/bin/windows/base/){target="_blank"},  [Mac](http://cran.r-project.org/bin/macosx/){target="_blank"} (download the latest R-4.x.x.pkg file for your appropriate version of Mac OS) or [linux](https://cran.r-project.org/bin/linux){target="_blank"} (choose your flavour of linux).
 
 **Install RStudio.** Download and install [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/){target="_blank"}.
 
@@ -23,7 +23,7 @@ You will need to download and install R and RStudio separately. **R** is the und
 
 \  
 
-See Section 1.1 and 1.2 of our [Introduction to R book](https://intro2r.com) for more details about installing R and RStudio. We have also produced a video walking you through the process of installing R and RStudio and also a brief introduction to RStudio.
+See [Section 1.1](https://intro2r.com/install_r.html#install_r) and [Section 1.2](https://intro2r.com/installing-rstudio.html#installing-rstudio) of our [Introduction to R book](https://intro2r.com) for more details about installing R and RStudio. We have also produced a video walking you through the process of installing R and RStudio and also a brief introduction to RStudio.
 
 \  
 
@@ -40,12 +40,12 @@ And see this video for a short introduction to using RStudio.
 \  
 
 ## Get the Data
-Click the **[<i class="fa fa-download"></i> Data](data.html)** link on the navbar at the top of the course website and follow one of the two options described. You can either download all the data needed by downloading **[this zip file <i class="fa fa-file-archive-o" aria-hidden="true"></i>](data/all_data.zip)** or by downloading individual data sets as needed at the **[<i class="fa fa-download"></i> Data](data.html)** page. If you download the zip file you will need to use your favourite software to uncompress this file (although most operating systems now have at least one built-in (un)compression tool). 
+Click the **[<i class="fa fa-download"></i> Data](data.html)** link on the navbar at the top of the course website and follow one of the two options described. You can download all the data needed by downloading individual data sets as needed at the **[<i class="fa fa-download"></i> Data](data.html)** page. 
 
 \  
 
 ## R markdown
-Installing R markdown is not required for this course. However, for those of you who are interested in using R markdown to create reproducible reports (or websites like this one!) follow these [instructions](https://intro2r.com/install-rm.html){target="_blank"} to install R markdown on your computer. Although we will only scratch the surface of R markdown during this course we plan to run a webinar on this subject in the near future.  
+Installing R markdown is not required for this course. However, for those of you who are interested in using R markdown to create reproducible reports (or websites like this one!) follow these [instructions](https://intro2r.com/install-rm.html#install-rm){target="_blank"} to install R markdown on your computer. Although we will only scratch the surface of R markdown during this course we plan to run a webinar on this subject in the near future.  
 
 \  
 
