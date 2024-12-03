@@ -26,7 +26,7 @@ Although this short course is primarily focussed on introducing you to R, it wou
 
 \  
 
-1\. Download the datafile *'prawnGR.CSV'* from the **[<i class="fa fa-download"></i> Data](data.html)** link and save it to the `data` directory. Import these data into R and assign to a variable with an appropriate name. These data were collected from an experiment to investigate the difference in growth rate of the [giant tiger prawn](https://en.wikipedia.org/wiki/Penaeus_monodon) (*Penaeus monodon*) fed either an artificial or natural diet. Have a quick look at the structure of this dataset and plot the growth rate versus the diet using an appropriate plot. How many observations are there in each diet treatment?
+1\. Download the datafile *'prawnGR.csv'* from the **[<i class="fa fa-download"></i> Data](data.html)** link and save it to the `data` directory. Import these data into R and assign to a variable with an appropriate name. These data were collected from an experiment to investigate the difference in growth rate of the [giant tiger prawn](https://en.wikipedia.org/wiki/Penaeus_monodon) (*Penaeus monodon*) fed either an artificial or natural diet. Have a quick look at the structure of this dataset and plot the growth rate versus the diet using an appropriate plot. How many observations are there in each diet treatment?
 
 ```{r Q1, echo=SOLUTIONS}
 prawns <- read.table('data/prawnGR.CSV', sep = ",", header = TRUE,
@@ -203,7 +203,7 @@ plot(growth.lm)
 
 \  
 
-7\. Download the datafile *'Gigartina.CSV'* from the **[<i class="fa fa-download"></i> Data](data.html)** link and save it to the `data` directory. Import the dataset into R and assign the dataframe an appropriate name. These data were collected from a study to examine the change in `diameter` of red algae [*Mastocarpus stellatus*](https://en.wikipedia.org/wiki/Mastocarpus_stellatus) spores grown in three different diatom cultures and a control group grown in artificial seawater (`diatom.treat` variable). Use the function `str()` to examine the dataframe. How many replicates are there per diatom treatment? Use an appropriate plot to examine whether there are any obvious differences in diameter between the treatments.
+7\. Download the datafile *'Gigartina.csv'* from the **[<i class="fa fa-download"></i> Data](data.html)** link and save it to the `data` directory. Import the dataset into R and assign the dataframe an appropriate name. These data were collected from a study to examine the change in `diameter` of red algae [*Mastocarpus stellatus*](https://en.wikipedia.org/wiki/Mastocarpus_stellatus) spores grown in three different diatom cultures and a control group grown in artificial seawater (`diatom.treat` variable). Use the function `str()` to examine the dataframe. How many replicates are there per diatom treatment? Use an appropriate plot to examine whether there are any obvious differences in diameter between the treatments.
 
 ```{r Q7, echo=SOLUTIONS}
 gigartina <- read.table('data/Gigartina.CSV', header = TRUE, sep = ",",
