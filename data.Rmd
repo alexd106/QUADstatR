@@ -11,6 +11,7 @@ knitr::opts_chunk$set(message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE)
 suppressPackageStartupMessages(library(dplyr))
 ```
 
+<!--
 ```{r zipdir2, include=FALSE, eval=FALSE}
 if (file.exists("data/all_data.zip")){
   file.remove("data/all_data.zip")
@@ -18,7 +19,7 @@ if (file.exists("data/all_data.zip")){
 flist <- list.files('data')
 utils::zip(zipfile = 'data/all_data', files = paste0('data/', flist), extras = c("-x '*.DS_Store'", "-x '*.zip'"))
 ```
-
+-->
 
 \  
 <!--
@@ -55,7 +56,8 @@ dir <- "data/"
 list.files(dir) %>%
   sort %>% 
   # grep("\\.html$|*.zip", ., value = TRUE, invert = TRUE) %>% 
-  grep("(\\.html$|loyn.txt)", ., value = TRUE, invert = TRUE) %>% 
+  # grep("(\\.html$|loyn.txt)", ., value = TRUE, invert = TRUE) %>% 
+  grep("(\\.html$)", ., value = TRUE, invert = TRUE) %>%
   paste0("    + [", ., "](", paste0(dir, .), ")") %>% 
   cat(sep = "\n")
 ```
