@@ -20,4 +20,4 @@ course_intro_email
 reminder_email
 delegate_email
 # VSCodium stuff
-.vscode
+.vscode/settings.json
