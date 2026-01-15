@@ -1,3 +1,18 @@
 {
-  "terminal.integrated.cwd": "${workspaceFolder}"
+  "terminal.integrated.cwd": "${workspaceFolder}",
+
+  "terminal.integrated.profiles.osx": {
+    "Radian (zsh)": {
+      "path": "/bin/zsh",
+      "args": [
+        "-lc",
+        "exec /Users/nhy163/.local/bin/radian"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "Radian (zsh)",
+
+  "r.rpath.mac": "/usr/local/bin/R",
+  "r.rterm.mac": "/Users/nhy163/.local/bin/radian",
+  "r.plot.useHttpgd": true
 }
